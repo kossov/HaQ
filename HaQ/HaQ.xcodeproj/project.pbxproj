@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		626BA0DCBFEE2A74D640F623 /* libPods-HaQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FE73FC311619F2C593FC /* libPods-HaQ.a */; };
+		FC56F11D1C616AA600E7DA32 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC56F11C1C616AA600E7DA32 /* LoginViewController.m */; };
+		FC56F1201C616AB300E7DA32 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC56F11F1C616AB300E7DA32 /* RegisterViewController.m */; };
 		FC6256591C6134D100FCAE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6256581C6134D100FCAE56 /* main.m */; };
 		FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565B1C6134D100FCAE56 /* AppDelegate.m */; };
 		FC62565F1C6134D200FCAE56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565E1C6134D200FCAE56 /* ViewController.m */; };
@@ -20,6 +22,10 @@
 		56B9FE73FC311619F2C593FC /* libPods-HaQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaQ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5237C04DDC5F1219AA4EA24 /* Pods-HaQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.release.xcconfig"; sourceTree = "<group>"; };
 		E2835DEEC783EE3201BBD73D /* Pods-HaQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.debug.xcconfig"; sourceTree = "<group>"; };
+		FC56F11B1C616AA600E7DA32 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FC56F11C1C616AA600E7DA32 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FC56F11E1C616AB300E7DA32 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		FC56F11F1C616AB300E7DA32 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		FC6256541C6134D100FCAE56 /* HaQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6256581C6134D100FCAE56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC62565A1C6134D100FCAE56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +67,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FC56F1171C6165B100E7DA32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FC56F1181C61696900E7DA32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FC56F11A1C616A2D00E7DA32 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC56F11B1C616AA600E7DA32 /* LoginViewController.h */,
+				FC56F11C1C616AA600E7DA32 /* LoginViewController.m */,
+				FC56F11E1C616AB300E7DA32 /* RegisterViewController.h */,
+				FC56F11F1C616AB300E7DA32 /* RegisterViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FC62564B1C6134D100FCAE56 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +113,9 @@
 		FC6256561C6134D100FCAE56 /* HaQ */ = {
 			isa = PBXGroup;
 			children = (
+				FC56F11A1C616A2D00E7DA32 /* ViewControllers */,
+				FC56F1181C61696900E7DA32 /* Views */,
+				FC56F1171C6165B100E7DA32 /* Models */,
 				FC62565A1C6134D100FCAE56 /* AppDelegate.h */,
 				FC62565B1C6134D100FCAE56 /* AppDelegate.m */,
 				FC62565D1C6134D200FCAE56 /* ViewController.h */,
@@ -225,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC56F1201C616AB300E7DA32 /* RegisterViewController.m in Sources */,
+				FC56F11D1C616AA600E7DA32 /* LoginViewController.m in Sources */,
 				FC62565F1C6134D200FCAE56 /* ViewController.m in Sources */,
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
