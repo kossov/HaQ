@@ -8,34 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		626BA0DCBFEE2A74D640F623 /* libPods-HaQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FE73FC311619F2C593FC /* libPods-HaQ.a */; };
-		FC56F11D1C616AA600E7DA32 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC56F11C1C616AA600E7DA32 /* LoginViewController.m */; };
-		FC56F1201C616AB300E7DA32 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC56F11F1C616AB300E7DA32 /* RegisterViewController.m */; };
+		FC5FC30A1C63BF60004C0AD6 /* UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3091C63BF60004C0AD6 /* UserLocation.m */; };
+		FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */; };
+		FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */; };
 		FC6256591C6134D100FCAE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6256581C6134D100FCAE56 /* main.m */; };
 		FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565B1C6134D100FCAE56 /* AppDelegate.m */; };
-		FC62565F1C6134D200FCAE56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565E1C6134D200FCAE56 /* ViewController.m */; };
 		FC6256621C6134D200FCAE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6256601C6134D200FCAE56 /* Main.storyboard */; };
 		FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6256631C6134D200FCAE56 /* Assets.xcassets */; };
 		FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */; };
+		FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331401C636C1E00F616AC /* LoginViewController.m */; };
+		FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331431C636C2F00F616AC /* RegisterViewController.m */; };
+		FCA331481C636C8500F616AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331471C636C8500F616AC /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56B9FE73FC311619F2C593FC /* libPods-HaQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaQ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5237C04DDC5F1219AA4EA24 /* Pods-HaQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.release.xcconfig"; sourceTree = "<group>"; };
 		E2835DEEC783EE3201BBD73D /* Pods-HaQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.debug.xcconfig"; sourceTree = "<group>"; };
-		FC56F11B1C616AA600E7DA32 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		FC56F11C1C616AA600E7DA32 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		FC56F11E1C616AB300E7DA32 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		FC56F11F1C616AB300E7DA32 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		FC5FC3081C63BF60004C0AD6 /* UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLocation.h; path = Models/UserLocation.h; sourceTree = "<group>"; };
+		FC5FC3091C63BF60004C0AD6 /* UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLocation.m; path = Models/UserLocation.m; sourceTree = "<group>"; };
+		FC5FC30B1C63BF77004C0AD6 /* ItemLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemLocation.h; path = Models/ItemLocation.h; sourceTree = "<group>"; };
+		FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemLocation.m; path = Models/ItemLocation.m; sourceTree = "<group>"; };
+		FC5FC30F1C63C351004C0AD6 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNumberGenerator.h; path = Helpers/RandomNumberGenerator.h; sourceTree = "<group>"; };
+		FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomNumberGenerator.m; path = Helpers/RandomNumberGenerator.m; sourceTree = "<group>"; };
 		FC6256541C6134D100FCAE56 /* HaQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6256581C6134D100FCAE56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC62565A1C6134D100FCAE56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC62565B1C6134D100FCAE56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC62565D1C6134D200FCAE56 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FC62565E1C6134D200FCAE56 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FC6256611C6134D200FCAE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC6256631C6134D200FCAE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6256661C6134D200FCAE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6256681C6134D200FCAE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA3313F1C636C1E00F616AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
+		FCA331401C636C1E00F616AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
+		FCA331421C636C2F00F616AC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controllers/RegisterViewController.h; sourceTree = "<group>"; };
+		FCA331431C636C2F00F616AC /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controllers/RegisterViewController.m; sourceTree = "<group>"; };
+		FCA331461C636C8500F616AC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		FCA331471C636C8500F616AC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,26 +79,21 @@
 		FC56F1171C6165B100E7DA32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC5FC3081C63BF60004C0AD6 /* UserLocation.h */,
+				FC5FC3091C63BF60004C0AD6 /* UserLocation.m */,
+				FC5FC30B1C63BF77004C0AD6 /* ItemLocation.h */,
+				FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		FC56F1181C61696900E7DA32 /* Views */ = {
+		FC5FC30E1C63C32E004C0AD6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FC5FC30F1C63C351004C0AD6 /* RandomNumberGenerator.h */,
+				FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */,
 			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		FC56F11A1C616A2D00E7DA32 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				FC56F11B1C616AA600E7DA32 /* LoginViewController.h */,
-				FC56F11C1C616AA600E7DA32 /* LoginViewController.m */,
-				FC56F11E1C616AB300E7DA32 /* RegisterViewController.h */,
-				FC56F11F1C616AB300E7DA32 /* RegisterViewController.m */,
-			);
-			name = ViewControllers;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		FC62564B1C6134D100FCAE56 = {
@@ -113,13 +117,11 @@
 		FC6256561C6134D100FCAE56 /* HaQ */ = {
 			isa = PBXGroup;
 			children = (
-				FC56F11A1C616A2D00E7DA32 /* ViewControllers */,
-				FC56F1181C61696900E7DA32 /* Views */,
+				FC5FC30E1C63C32E004C0AD6 /* Helpers */,
+				FCA3313E1C636BFC00F616AC /* Controllers */,
 				FC56F1171C6165B100E7DA32 /* Models */,
 				FC62565A1C6134D100FCAE56 /* AppDelegate.h */,
 				FC62565B1C6134D100FCAE56 /* AppDelegate.m */,
-				FC62565D1C6134D200FCAE56 /* ViewController.h */,
-				FC62565E1C6134D200FCAE56 /* ViewController.m */,
 				FC6256601C6134D200FCAE56 /* Main.storyboard */,
 				FC6256631C6134D200FCAE56 /* Assets.xcassets */,
 				FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */,
@@ -135,6 +137,19 @@
 				FC6256581C6134D100FCAE56 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCA3313E1C636BFC00F616AC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCA3313F1C636C1E00F616AC /* LoginViewController.h */,
+				FCA331401C636C1E00F616AC /* LoginViewController.m */,
+				FCA331421C636C2F00F616AC /* RegisterViewController.h */,
+				FCA331431C636C2F00F616AC /* RegisterViewController.m */,
+				FCA331461C636C8500F616AC /* MainViewController.h */,
+				FCA331471C636C8500F616AC /* MainViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +187,11 @@
 					FC6256531C6134D100FCAE56 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 867ZT75EHC;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -259,11 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC56F1201C616AB300E7DA32 /* RegisterViewController.m in Sources */,
-				FC56F11D1C616AA600E7DA32 /* LoginViewController.m in Sources */,
-				FC62565F1C6134D200FCAE56 /* ViewController.m in Sources */,
+				FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */,
+				FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */,
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
+				FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
+				FCA331481C636C8500F616AC /* MainViewController.m in Sources */,
+				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
+				FC5FC30A1C63BF60004C0AD6 /* UserLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
