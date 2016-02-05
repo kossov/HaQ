@@ -27,7 +27,9 @@
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    CLLocationManager *_locationManager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,15 +38,16 @@
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
     
     if (![PFUser currentUser]) {
-        [self MoveToLogInStage];
+        [self moveToLogInStage];
         return;
     }
     
     UIBarButtonItem *myButton = [[UIBarButtonItem alloc] initWithTitle:@"LogOut"
                                                                  style:UIBarButtonItemStylePlain
                                                                 target:self
-                                                                action:@selector(LogOutUser)];
+                                                                action:@selector(logOutUser)];
     self.navigationItem.rightBarButtonItem = myButton;
+    [self startLocationServices];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -55,7 +58,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)LogOutUser {
+- (void)logOutUser {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error) {
@@ -65,11 +68,11 @@
         }
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self MoveToLogInStage];
+        [self moveToLogInStage];
     }];
 }
 
-- (void)MoveToLogInStage {
+- (void)moveToLogInStage {
     [self performSegueWithIdentifier:@"LogOut" sender:self];
 }
 
@@ -83,16 +86,45 @@
     [self performSegueWithIdentifier:@"CollectItems" sender:self];
 }
 
-+ (void)FetchUserData {
++ (void)fetchUserData {
     PFUser *user = [PFUser currentUser];
     
     if (!user) {
-        NSLog(@"no user");
         return;
     }
     
-    //[UserDataManager getInstance].test += 1;
-    //NSLog(@"%d", [UserDataManager getInstance].test);
+    
+}
+
+- (void)startLocationServices {
+    if (nil == _locationManager)
+        _locationManager = [[CLLocationManager alloc] init];
+    
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    
+    _locationManager.distanceFilter = 1; // meters
+    
+    [_locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+    // If it's a relatively recent event, turn off updates to save power.
+    CLLocation* location = [locations lastObject];
+    NSDate* eventDate = location.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    if (fabs(howRecent) < 15.0) {
+        
+        // PUSH DATA TO THE SERVER
+        PFGeoPoint *currentLocation = [PFGeoPoint geoPointWithLocation:location];
+        
+        
+        // If the event is recent, do something with it.
+//        NSLog(@"latitude %+.6f, longitude %+.6f\n",
+//              location.coordinate.latitude,
+//              location.coordinate.longitude);
+    }
 }
 
 @end

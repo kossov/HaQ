@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *StatusBarGrid;
 - (IBAction)StartHackingButtonAction:(id)sender;
 - (IBAction)ShowTargetsButtonAction:(id)sender;
 - (IBAction)CollectItemsButtonAction:(id)sender;
 
-+ (void)FetchUserData;
++ (void)fetchUserData;
 
 @end
