@@ -19,6 +19,10 @@
 		FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331401C636C1E00F616AC /* LoginViewController.m */; };
 		FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331431C636C2F00F616AC /* RegisterViewController.m */; };
 		FCA331481C636C8500F616AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331471C636C8500F616AC /* MainViewController.m */; };
+		FCD11EE71C64A86B00DA6EFA /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EE61C64A86B00DA6EFA /* Validator.m */; };
+		FCD11EEA1C64A87900DA6EFA /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EE91C64A87900DA6EFA /* HelperMethods.m */; };
+		FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EED1C64AA7600DA6EFA /* GlobalConstants.m */; };
+		FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,14 @@
 		FCA331431C636C2F00F616AC /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Controllers/RegisterViewController.m; sourceTree = "<group>"; };
 		FCA331461C636C8500F616AC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
 		FCA331471C636C8500F616AC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		FCD11EE51C64A86B00DA6EFA /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validator.h; path = Helpers/Validator.h; sourceTree = "<group>"; };
+		FCD11EE61C64A86B00DA6EFA /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validator.m; path = Helpers/Validator.m; sourceTree = "<group>"; };
+		FCD11EE81C64A87900DA6EFA /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelperMethods.h; path = Helpers/HelperMethods.h; sourceTree = "<group>"; };
+		FCD11EE91C64A87900DA6EFA /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperMethods.m; path = Helpers/HelperMethods.m; sourceTree = "<group>"; };
+		FCD11EEC1C64AA7600DA6EFA /* GlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalConstants.h; path = Constants/GlobalConstants.h; sourceTree = "<group>"; };
+		FCD11EED1C64AA7600DA6EFA /* GlobalConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalConstants.m; path = Constants/GlobalConstants.m; sourceTree = "<group>"; };
+		FCD11EEF1C64AA8400DA6EFA /* ModelConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelConstants.h; path = Constants/ModelConstants.h; sourceTree = "<group>"; };
+		FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelConstants.m; path = Constants/ModelConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,10 @@
 			children = (
 				FC5FC30F1C63C351004C0AD6 /* RandomNumberGenerator.h */,
 				FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */,
+				FCD11EE51C64A86B00DA6EFA /* Validator.h */,
+				FCD11EE61C64A86B00DA6EFA /* Validator.m */,
+				FCD11EE81C64A87900DA6EFA /* HelperMethods.h */,
+				FCD11EE91C64A87900DA6EFA /* HelperMethods.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -117,6 +133,7 @@
 		FC6256561C6134D100FCAE56 /* HaQ */ = {
 			isa = PBXGroup;
 			children = (
+				FCD11EEB1C64AA3E00DA6EFA /* Constants */,
 				FC5FC30E1C63C32E004C0AD6 /* Helpers */,
 				FCA3313E1C636BFC00F616AC /* Controllers */,
 				FC56F1171C6165B100E7DA32 /* Models */,
@@ -150,6 +167,17 @@
 				FCA331471C636C8500F616AC /* MainViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FCD11EEB1C64AA3E00DA6EFA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FCD11EEC1C64AA7600DA6EFA /* GlobalConstants.h */,
+				FCD11EED1C64AA7600DA6EFA /* GlobalConstants.m */,
+				FCD11EEF1C64AA8400DA6EFA /* ModelConstants.h */,
+				FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,12 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD11EEA1C64A87900DA6EFA /* HelperMethods.m in Sources */,
 				FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */,
+				FCD11EE71C64A86B00DA6EFA /* Validator.m in Sources */,
 				FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */,
+				FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */,
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
 				FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
 				FCA331481C636C8500F616AC /* MainViewController.m in Sources */,
+				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
 				FC5FC30A1C63BF60004C0AD6 /* UserLocation.m in Sources */,
 			);
