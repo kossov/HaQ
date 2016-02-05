@@ -10,6 +10,11 @@
 
 @interface MainViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UICollectionView *StatusBarGrid;
+- (IBAction)StartHackingButtonAction:(id)sender;
+- (IBAction)ShowTargetsButtonAction:(id)sender;
+- (IBAction)CollectItemsButtonAction:(id)sender;
+
 + (void)FetchUserData;
 
 @end

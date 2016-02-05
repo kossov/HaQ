@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import <GoogleMaps/GoogleMaps.h>
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Parse setApplicationId:@"cm5tjPtfKoRz0TSj1xUiNMyt3zAQ7VTSfF6a2VgW" clientKey:@"FzW0YurxuShdoiFj6RICo069yPIzCBVoKXWTgCZ2"];
+    [GMSServices provideAPIKey:@"AIzaSyAloq_exCmGNa2QU1Ycq1VM_D0FYfO_DRI"];
     return YES;
 }
 
@@ -35,25 +37,25 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    application = [UIApplication sharedApplication];
-    
-    //create new uiBackgroundTask
-    __block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
-        [application endBackgroundTask:bgTask];
-        bgTask = UIBackgroundTaskInvalid;
-    }];
-    
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
-                                                      target:[MainViewController class]
-                                                    selector:@selector(FetchUserData)
-                                                    userInfo:nil
-                                                     repeats:YES];
-    //and create new timer with async call:
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //run function methodRunAfterBackground
-        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-        [[NSRunLoop currentRunLoop] run];
-    });
+//    application = [UIApplication sharedApplication];
+//    
+//    //create new uiBackgroundTask
+//    __block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+//        [application endBackgroundTask:bgTask];
+//        bgTask = UIBackgroundTaskInvalid;
+//    }];
+//    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
+//                                                      target:[MainViewController class]
+//                                                    selector:@selector(FetchUserData)
+//                                                    userInfo:nil
+//                                                     repeats:YES];
+//    //and create new timer with async call:
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        //run function methodRunAfterBackground
+//        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+//        [[NSRunLoop currentRunLoop] run];
+//    });
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

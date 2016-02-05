@@ -23,6 +23,14 @@
 		FCD11EEA1C64A87900DA6EFA /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EE91C64A87900DA6EFA /* HelperMethods.m */; };
 		FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EED1C64AA7600DA6EFA /* GlobalConstants.m */; };
 		FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */; };
+		FCD11EF41C64B97900DA6EFA /* Friendship.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF31C64B97900DA6EFA /* Friendship.m */; };
+		FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF61C64D1A100DA6EFA /* BeingHackedViewController.m */; };
+		FCD11EFA1C64D1BD00DA6EFA /* HackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF91C64D1BD00DA6EFA /* HackViewController.m */; };
+		FCD11EFD1C64D1D000DA6EFA /* TargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EFC1C64D1D000DA6EFA /* TargetsViewController.m */; };
+		FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EFF1C64D1E200DA6EFA /* CollectItemsViewController.m */; };
+		FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F021C64D5E800DA6EFA /* AddTargetViewController.m */; };
+		FCD11F061C64DD7900DA6EFA /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F051C64DD7900DA6EFA /* UserDataManager.m */; };
+		FCD11F0C1C64E81500DA6EFA /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +65,22 @@
 		FCD11EED1C64AA7600DA6EFA /* GlobalConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalConstants.m; path = Constants/GlobalConstants.m; sourceTree = "<group>"; };
 		FCD11EEF1C64AA8400DA6EFA /* ModelConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelConstants.h; path = Constants/ModelConstants.h; sourceTree = "<group>"; };
 		FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelConstants.m; path = Constants/ModelConstants.m; sourceTree = "<group>"; };
+		FCD11EF21C64B97900DA6EFA /* Friendship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friendship.h; path = Models/Friendship.h; sourceTree = "<group>"; };
+		FCD11EF31C64B97900DA6EFA /* Friendship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friendship.m; path = Models/Friendship.m; sourceTree = "<group>"; };
+		FCD11EF51C64D1A100DA6EFA /* BeingHackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeingHackedViewController.h; path = Controllers/BeingHackedViewController.h; sourceTree = "<group>"; };
+		FCD11EF61C64D1A100DA6EFA /* BeingHackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeingHackedViewController.m; path = Controllers/BeingHackedViewController.m; sourceTree = "<group>"; };
+		FCD11EF81C64D1BD00DA6EFA /* HackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackViewController.h; path = Controllers/HackViewController.h; sourceTree = "<group>"; };
+		FCD11EF91C64D1BD00DA6EFA /* HackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackViewController.m; path = Controllers/HackViewController.m; sourceTree = "<group>"; };
+		FCD11EFB1C64D1D000DA6EFA /* TargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetsViewController.h; path = Controllers/TargetsViewController.h; sourceTree = "<group>"; };
+		FCD11EFC1C64D1D000DA6EFA /* TargetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetsViewController.m; path = Controllers/TargetsViewController.m; sourceTree = "<group>"; };
+		FCD11EFE1C64D1E200DA6EFA /* CollectItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectItemsViewController.h; path = Controllers/CollectItemsViewController.h; sourceTree = "<group>"; };
+		FCD11EFF1C64D1E200DA6EFA /* CollectItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectItemsViewController.m; path = Controllers/CollectItemsViewController.m; sourceTree = "<group>"; };
+		FCD11F011C64D5E800DA6EFA /* AddTargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTargetViewController.h; path = Controllers/AddTargetViewController.h; sourceTree = "<group>"; };
+		FCD11F021C64D5E800DA6EFA /* AddTargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTargetViewController.m; path = Controllers/AddTargetViewController.m; sourceTree = "<group>"; };
+		FCD11F041C64DD7900DA6EFA /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataManager.h; path = Helpers/UserDataManager.h; sourceTree = "<group>"; };
+		FCD11F051C64DD7900DA6EFA /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataManager.m; path = Helpers/UserDataManager.m; sourceTree = "<group>"; };
+		FCD11F0A1C64E81500DA6EFA /* GoogleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMapViewController.h; path = Controllers/GoogleMapViewController.h; sourceTree = "<group>"; };
+		FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMapViewController.m; path = Controllers/GoogleMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +119,8 @@
 				FC5FC3091C63BF60004C0AD6 /* UserLocation.m */,
 				FC5FC30B1C63BF77004C0AD6 /* ItemLocation.h */,
 				FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */,
+				FCD11EF21C64B97900DA6EFA /* Friendship.h */,
+				FCD11EF31C64B97900DA6EFA /* Friendship.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -108,6 +134,8 @@
 				FCD11EE61C64A86B00DA6EFA /* Validator.m */,
 				FCD11EE81C64A87900DA6EFA /* HelperMethods.h */,
 				FCD11EE91C64A87900DA6EFA /* HelperMethods.m */,
+				FCD11F041C64DD7900DA6EFA /* UserDataManager.h */,
+				FCD11F051C64DD7900DA6EFA /* UserDataManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -133,6 +161,7 @@
 		FC6256561C6134D100FCAE56 /* HaQ */ = {
 			isa = PBXGroup;
 			children = (
+				FCD11F0E1C64EEB300DA6EFA /* Resources */,
 				FCD11EEB1C64AA3E00DA6EFA /* Constants */,
 				FC5FC30E1C63C32E004C0AD6 /* Helpers */,
 				FCA3313E1C636BFC00F616AC /* Controllers */,
@@ -165,6 +194,18 @@
 				FCA331431C636C2F00F616AC /* RegisterViewController.m */,
 				FCA331461C636C8500F616AC /* MainViewController.h */,
 				FCA331471C636C8500F616AC /* MainViewController.m */,
+				FCD11EF51C64D1A100DA6EFA /* BeingHackedViewController.h */,
+				FCD11EF61C64D1A100DA6EFA /* BeingHackedViewController.m */,
+				FCD11EF81C64D1BD00DA6EFA /* HackViewController.h */,
+				FCD11EF91C64D1BD00DA6EFA /* HackViewController.m */,
+				FCD11EFB1C64D1D000DA6EFA /* TargetsViewController.h */,
+				FCD11EFC1C64D1D000DA6EFA /* TargetsViewController.m */,
+				FCD11EFE1C64D1E200DA6EFA /* CollectItemsViewController.h */,
+				FCD11EFF1C64D1E200DA6EFA /* CollectItemsViewController.m */,
+				FCD11F011C64D5E800DA6EFA /* AddTargetViewController.h */,
+				FCD11F021C64D5E800DA6EFA /* AddTargetViewController.m */,
+				FCD11F0A1C64E81500DA6EFA /* GoogleMapViewController.h */,
+				FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +219,13 @@
 				FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		FCD11F0E1C64EEB300DA6EFA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,14 +358,22 @@
 				FCD11EEA1C64A87900DA6EFA /* HelperMethods.m in Sources */,
 				FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */,
 				FCD11EE71C64A86B00DA6EFA /* Validator.m in Sources */,
+				FCD11EFA1C64D1BD00DA6EFA /* HackViewController.m in Sources */,
 				FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */,
 				FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */,
+				FCD11F0C1C64E81500DA6EFA /* GoogleMapViewController.m in Sources */,
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
 				FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
 				FCA331481C636C8500F616AC /* MainViewController.m in Sources */,
+				FCD11EF41C64B97900DA6EFA /* Friendship.m in Sources */,
+				FCD11EFD1C64D1D000DA6EFA /* TargetsViewController.m in Sources */,
 				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
+				FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
+				FCD11F061C64DD7900DA6EFA /* UserDataManager.m in Sources */,
+				FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */,
+				FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */,
 				FC5FC30A1C63BF60004C0AD6 /* UserLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

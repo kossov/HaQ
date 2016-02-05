@@ -19,10 +19,11 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "MainViewController.h"
 #import "LoginViewController.h"
+#import "UserDataManager.h"
 
 @interface MainViewController ()
 
-@property BOOL UserIsAuthenticated;
+@property NSInteger* testCount;
 
 @end
 
@@ -30,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // HIDE BACK BUTTON - COMMING FROM LOGINVIEWCONTROLLER
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
     
@@ -39,7 +40,6 @@
         return;
     }
     
-    _UserIsAuthenticated = YES;
     UIBarButtonItem *myButton = [[UIBarButtonItem alloc] initWithTitle:@"LogOut"
                                                                  style:UIBarButtonItemStylePlain
                                                                 target:self
@@ -73,6 +73,16 @@
     [self performSegueWithIdentifier:@"LogOut" sender:self];
 }
 
+- (IBAction)StartHackingButtonAction:(id)sender {
+}
+
+- (IBAction)ShowTargetsButtonAction:(id)sender {
+}
+
+- (IBAction)CollectItemsButtonAction:(id)sender {
+    [self performSegueWithIdentifier:@"CollectItems" sender:self];
+}
+
 + (void)FetchUserData {
     PFUser *user = [PFUser currentUser];
     
@@ -81,7 +91,8 @@
         return;
     }
     
-    NSLog(@"user");
+    //[UserDataManager getInstance].test += 1;
+    //NSLog(@"%d", [UserDataManager getInstance].test);
 }
 
 @end
