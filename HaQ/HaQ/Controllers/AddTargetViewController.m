@@ -12,6 +12,7 @@
 #import "HelperMethods.h"
 #import "Friendship.h"
 #import "GlobalConstants.h"
+#import "ModelConstants.h"
 
 @interface AddTargetViewController ()
 
@@ -66,22 +67,47 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PFUser *selectedUser = ((PFUser*)_displayItems[indexPath.row]);
     PFUser *currentUser = [PFUser currentUser];
-    Friendship *friendship = [Friendship friendshipWithUser:currentUser.username toUser:selectedUser.username];
-    __block UIAlertController *alert;
-    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [friendship saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
+    PFQuery *suchFriendshipIsNotExistant = [PFQuery queryWithClassName:@"Friendship"];
+    [suchFriendshipIsNotExistant whereKey:@"byUser" notEqualTo:currentUser.username];
+    [suchFriendshipIsNotExistant whereKey:@"toUser" notEqualTo:selectedUser.username];
+    [suchFriendshipIsNotExistant getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        __block UIAlertController *alert;
+        
+        if (object) {
+            Friendship *targetContact = (Friendship*)object;
+            if (targetContact.isApproved == TargetContactDeclined) {
+                targetContact.isApproved = TargetContactPending;
+                [targetContact saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }];
+                
+                return;
+            }
+            
+            alert = [HelperMethods getAlert:TargetContactSuchContactAlreadyExistsMessageTitle andMessage:TargetContactSuchContactAlreadyExistsMessageDescription];
             [self presentViewController:alert animated:YES completion:nil];
-        } else {
-            NSString *errorString = [HelperMethods getStringFromError:error];
-            alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-            [self presentViewController:alert animated:YES completion:^{
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            }];
+            return;
         }
+        
+        Friendship *friendship = [Friendship friendshipWithUser:currentUser.username toUser:selectedUser.username];
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [friendship saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
+                [self presentViewController:alert animated:YES completion:nil];
+            } else {
+                NSString *errorString = [HelperMethods getStringFromError:error];
+                alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                [self presentViewController:alert animated:YES completion:^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
+            }
+        }];
     }];
 }
 

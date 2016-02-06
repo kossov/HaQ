@@ -10,4 +10,8 @@
 
 @interface ModelConstants : NSObject
 
+extern NSString *const TargetContactApproved;
+extern NSString *const TargetContactPending;
+extern NSString *const TargetContactDeclined;
+
 @end

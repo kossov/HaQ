@@ -13,6 +13,8 @@
 #import "HelperMethods.h"
 #import "Friendship.h"
 #import "GlobalConstants.h"
+#import "DecideForPendingTargetsViewController.h"
+#import "ModelConstants.h"
 
 @interface PendingTargetsViewController ()
 
@@ -20,6 +22,7 @@
 
 @implementation PendingTargetsViewController {
     NSMutableArray *_pendingTargets;
+    Friendship *_selectedPendingTarget;
 }
 
 - (void)viewDidLoad {
@@ -27,10 +30,6 @@
     
     [self updatePendingTargetsData];
     self.PendingTargetsTableView.delegate = self;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _pendingTargets.count;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -41,9 +40,37 @@
     self.parentViewController.title = @"Pending Targets";
 }
 
+- (void)updatePendingTargetsData {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    PFUser *user = [PFUser currentUser];
+    PFQuery *friendshipToCurrentUser = [PFQuery queryWithClassName:@"Friendship"];
+    [friendshipToCurrentUser whereKey:@"toUser" equalTo:user.username];
+    [friendshipToCurrentUser whereKey:@"isApproved" equalTo:TargetContactPending];
+    [friendshipToCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSString *errorString = [HelperMethods getStringFromError:error];
+            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
+        _pendingTargets = [NSMutableArray arrayWithArray:objects];
+        
+        self.PendingTargetsTableView.dataSource = self;
+        [self.PendingTargetsTableView reloadData];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _pendingTargets.count;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     Friendship *currentTargetAtCell = (Friendship*)_pendingTargets[indexPath.row];
-    static NSString *cellIdentifier = @"TargetCell";
+    static NSString *cellIdentifier = @"PendingTargetCell";
     
     TargetCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil) {
@@ -58,52 +85,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Friendship *selectedPendingTarget = ((Friendship*)_pendingTargets[indexPath.row]);
-    
-    // THIS IS RIGHT; MAKE TRANSITION TO SCREEN WITH APPROVE/DECLINE BUTTONS
-//    selectedPendingTarget.isApproved = YES;
-//    
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    [selectedPendingTarget saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-//        UIAlertController *alert;
-//        
-//        if (succeeded) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            alert = [HelperMethods getAlert:TargetContactApprovedMessageTitle andMessage:TargetContactApprovedMessageDescription];
-//            [self presentViewController:alert animated:YES completion:nil];
-//        } else {
-//            NSString *errorString = [HelperMethods getStringFromError:error];
-//            alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-//            [self presentViewController:alert animated:YES completion:^{
-//                [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            }];
-//        }
-//        
-//    }];
+    _selectedPendingTarget = ((Friendship*)_pendingTargets[indexPath.row]);
+    [self performSegueWithIdentifier:@"DecideForPendingTarget" sender:self];
 }
 
-- (void)updatePendingTargetsData {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    PFUser *user = [PFUser currentUser];
-    PFQuery *friendshipToCurrentUser = [PFQuery queryWithClassName:@"Friendship"];
-    [friendshipToCurrentUser whereKey:@"toUser" equalTo:user.username];
-    [friendshipToCurrentUser whereKey:@"isApproved" equalTo:@NO];
-    [friendshipToCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSString *errorString = [HelperMethods getStringFromError:error];
-            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self presentViewController:alert animated:YES completion:nil];
-            return;
-        }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"DecideForPendingTarget"]) {
         
-        [_pendingTargets addObjectsFromArray:objects];
+        // Get destination view
+        DecideForPendingTargetsViewController *toVC = [segue destinationViewController];
         
-        self.PendingTargetsTableView.dataSource = self;
-        [self.PendingTargetsTableView reloadData];
-        
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    }];
+        // Pass the information to your destination view
+        toVC.decideForPendingTarget = _selectedPendingTarget;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

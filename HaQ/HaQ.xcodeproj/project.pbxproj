@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		626BA0DCBFEE2A74D640F623 /* libPods-HaQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FE73FC311619F2C593FC /* libPods-HaQ.a */; };
+		FC13BB8C1C66809C002AA905 /* DecideForPendingTargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */; };
 		FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */; };
 		FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */; };
 		FC6256591C6134D100FCAE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6256581C6134D100FCAE56 /* main.m */; };
@@ -33,14 +34,14 @@
 		FCD11F161C652A3600DA6EFA /* TargetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F151C652A3600DA6EFA /* TargetCell.m */; };
 		FCD11F1D1C652C2A00DA6EFA /* TargetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD11F1C1C652C2A00DA6EFA /* TargetCell.xib */; };
 		FCD11F201C65762300DA6EFA /* PendingTargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */; };
-		FCD11F271C6589C600DA6EFA /* DecideForPendingTarget.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD11F261C6589C600DA6EFA /* DecideForPendingTarget.xib */; };
-		FCD11F2A1C6589F000DA6EFA /* DecideForPendingTargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F291C6589F000DA6EFA /* DecideForPendingTargetView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56B9FE73FC311619F2C593FC /* libPods-HaQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaQ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5237C04DDC5F1219AA4EA24 /* Pods-HaQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.release.xcconfig"; sourceTree = "<group>"; };
 		E2835DEEC783EE3201BBD73D /* Pods-HaQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.debug.xcconfig"; sourceTree = "<group>"; };
+		FC13BB8A1C66809C002AA905 /* DecideForPendingTargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecideForPendingTargetsViewController.h; path = Controllers/DecideForPendingTargetsViewController.h; sourceTree = "<group>"; };
+		FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecideForPendingTargetsViewController.m; path = Controllers/DecideForPendingTargetsViewController.m; sourceTree = "<group>"; };
 		FC5FC30B1C63BF77004C0AD6 /* ItemLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemLocation.h; path = Models/ItemLocation.h; sourceTree = "<group>"; };
 		FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemLocation.m; path = Models/ItemLocation.m; sourceTree = "<group>"; };
 		FC5FC30F1C63C351004C0AD6 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNumberGenerator.h; path = Helpers/RandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -88,9 +89,6 @@
 		FCD11F1C1C652C2A00DA6EFA /* TargetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TargetCell.xib; path = Views/TargetCell.xib; sourceTree = "<group>"; };
 		FCD11F1E1C65762300DA6EFA /* PendingTargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PendingTargetsViewController.h; path = Controllers/PendingTargetsViewController.h; sourceTree = "<group>"; };
 		FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PendingTargetsViewController.m; path = Controllers/PendingTargetsViewController.m; sourceTree = "<group>"; };
-		FCD11F261C6589C600DA6EFA /* DecideForPendingTarget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DecideForPendingTarget.xib; path = Views/DecideForPendingTarget.xib; sourceTree = "<group>"; };
-		FCD11F281C6589F000DA6EFA /* DecideForPendingTargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecideForPendingTargetView.h; path = Views/DecideForPendingTargetView.h; sourceTree = "<group>"; };
-		FCD11F291C6589F000DA6EFA /* DecideForPendingTargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecideForPendingTargetView.m; path = Views/DecideForPendingTargetView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +215,8 @@
 				FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */,
 				FCD11F1E1C65762300DA6EFA /* PendingTargetsViewController.h */,
 				FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */,
+				FC13BB8A1C66809C002AA905 /* DecideForPendingTargetsViewController.h */,
+				FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,9 +245,6 @@
 				FCD11F141C652A3600DA6EFA /* TargetCell.h */,
 				FCD11F151C652A3600DA6EFA /* TargetCell.m */,
 				FCD11F1C1C652C2A00DA6EFA /* TargetCell.xib */,
-				FCD11F261C6589C600DA6EFA /* DecideForPendingTarget.xib */,
-				FCD11F281C6589F000DA6EFA /* DecideForPendingTargetView.h */,
-				FCD11F291C6589F000DA6EFA /* DecideForPendingTargetView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 			files = (
 				FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */,
 				FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */,
-				FCD11F271C6589C600DA6EFA /* DecideForPendingTarget.xib in Resources */,
 				FC6256621C6134D200FCAE56 /* Main.storyboard in Resources */,
 				FCD11F1D1C652C2A00DA6EFA /* TargetCell.xib in Resources */,
 			);
@@ -398,9 +394,9 @@
 				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
 				FCD11F161C652A3600DA6EFA /* TargetCell.m in Sources */,
 				FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */,
-				FCD11F2A1C6589F000DA6EFA /* DecideForPendingTargetView.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
 				FCD11F061C64DD7900DA6EFA /* UserDataManager.m in Sources */,
+				FC13BB8C1C66809C002AA905 /* DecideForPendingTargetsViewController.m in Sources */,
 				FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */,
 				FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */,
 			);

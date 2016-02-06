@@ -13,7 +13,7 @@
 
 @property NSString* byUser;
 @property NSString* toUser;
-@property BOOL isApproved;
+@property NSString* isApproved;
 
 +(NSString *)parseClassName;
 +(Friendship *) friendshipWithUser:(NSString*) user toUser:(NSString*) username;

@@ -7,6 +7,7 @@
 //
 
 #import "Friendship.h"
+#import "ModelConstants.h"
 
 @implementation Friendship
 
@@ -26,7 +27,7 @@
     Friendship *friendship = [Friendship object];
     friendship.byUser = byUser;
     friendship.toUser = toUser;
-    friendship.isApproved = NO;
+    friendship.isApproved = TargetContactPending;
     
     return friendship;
 }

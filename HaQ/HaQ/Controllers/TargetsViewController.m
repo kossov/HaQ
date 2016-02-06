@@ -13,6 +13,7 @@
 #import "HelperMethods.h"
 #import "Friendship.h"
 #import "GlobalConstants.h"
+#import "ModelConstants.h"
 
 @interface TargetsViewController ()
 
@@ -29,6 +30,49 @@
     
     self.TargetsTableView.delegate = self;
     self.TargetsSearchBar.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    UIBarButtonItem *refreshTargetsBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                       target:self
+                                                                                       action:@selector(updateTargetData)];
+    UIBarButtonItem *addTargetBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                  target:self
+                                                                                  action:@selector(addTarget)];
+    self.parentViewController.navigationItem.rightBarButtonItems = @[refreshTargetsBtn, addTargetBtn];
+    self.parentViewController.title = @"Your Targets";
+}
+
+- (void)updateTargetData {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    PFUser *user = [PFUser currentUser];
+    PFQuery *friendshipByCurrentUser = [PFQuery queryWithClassName:@"Friendship"];
+    [friendshipByCurrentUser whereKey:@"byUser" equalTo:user.username];
+    [friendshipByCurrentUser whereKey:@"isApproved" equalTo:TargetContactApproved];
+    [friendshipByCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        _allTargets = [NSMutableArray arrayWithArray:objects];
+        _displayTargets = [NSMutableArray arrayWithArray:objects];
+        PFQuery *friendshipToCurrentUser = [PFQuery queryWithClassName:@"Friendship"];
+        [friendshipToCurrentUser whereKey:@"toUser" equalTo:user.username];
+        [friendshipToCurrentUser whereKey:@"isApproved" equalTo:TargetContactApproved];
+        [friendshipToCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects2, NSError * _Nullable error2) {
+            if (error2) {
+                NSString *errorString = [HelperMethods getStringFromError:error2];
+                UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+            
+            [_allTargets addObjectsFromArray:objects2];
+            [_displayTargets addObjectsFromArray:objects2];
+            
+            self.TargetsTableView.dataSource = self;
+            [self.TargetsTableView reloadData];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
+    }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -70,56 +114,13 @@
     [self.TargetsTableView reloadData];
 }
 
-- (void)updateTargetData {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    PFUser *user = [PFUser currentUser];
-    PFQuery *friendshipByCurrentUser = [PFQuery queryWithClassName:@"Friendship"];
-    [friendshipByCurrentUser whereKey:@"byUser" equalTo:user.username];
-    [friendshipByCurrentUser whereKey:@"isApproved" equalTo:@NO];
-    [friendshipByCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        _allTargets = [NSMutableArray arrayWithArray:objects];
-        _displayTargets = [NSMutableArray arrayWithArray:objects];
-        PFQuery *friendshipToCurrentUser = [PFQuery queryWithClassName:@"Friendship"];
-        [friendshipToCurrentUser whereKey:@"toUser" equalTo:user.username];
-        [friendshipToCurrentUser whereKey:@"isApproved" equalTo:@NO];
-        [friendshipToCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects2, NSError * _Nullable error2) {
-            if (error2) {
-                NSString *errorString = [HelperMethods getStringFromError:error2];
-                UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                [self presentViewController:alert animated:YES completion:nil];
-                return;
-            }
-            
-            [_allTargets addObjectsFromArray:objects2];
-            [_displayTargets addObjectsFromArray:objects2];
-            
-            self.TargetsTableView.dataSource = self;
-            [self.TargetsTableView reloadData];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }];
-    }];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    UIBarButtonItem *refreshTargetsBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                       target:self
-                                                                                       action:@selector(updateTargetData)];
-    UIBarButtonItem *addTargetBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                  target:self
-                                                                                  action:@selector(addTarget)];
-    self.parentViewController.navigationItem.rightBarButtonItems = @[refreshTargetsBtn, addTargetBtn];
-    self.parentViewController.title = @"Your Targets";
+- (void)addTarget {
+    [self performSegueWithIdentifier:@"AddTarget" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)addTarget {
-    [self performSegueWithIdentifier:@"AddTarget" sender:self];
 }
 
 @end

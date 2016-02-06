@@ -27,5 +27,7 @@ NSString *const TargetContactApprovedMessageTitle = @"Target Contact Approved!";
 NSString *const TargetContactApprovedMessageDescription = @"Watch out, you are vurnable too.";
 NSString *const TargetContactDeclinedMessageTitle = @"Target Contact Declined!";
 NSString *const TargetContactDeclinedMessageDescription = @"I bet you are better :)";
+NSString *const TargetContactSuchContactAlreadyExistsMessageTitle = @"Target Contact already sent..";
+NSString *const TargetContactSuchContactAlreadyExistsMessageDescription = @"It might not be accepted or still pending or existing.";
 
 @end

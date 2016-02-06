@@ -27,5 +27,7 @@ extern NSString *const TargetContactApprovedMessageTitle;
 extern NSString *const TargetContactApprovedMessageDescription;
 extern NSString *const TargetContactDeclinedMessageTitle;
 extern NSString *const TargetContactDeclinedMessageDescription;
+extern NSString *const TargetContactSuchContactAlreadyExistsMessageTitle;
+extern NSString *const TargetContactSuchContactAlreadyExistsMessageDescription;
 
 @end

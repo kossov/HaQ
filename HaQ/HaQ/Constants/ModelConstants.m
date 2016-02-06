@@ -10,4 +10,8 @@
 
 @implementation ModelConstants
 
+NSString *const TargetContactApproved = @"Approved";
+NSString *const TargetContactPending = @"Pending";
+NSString *const TargetContactDeclined = @"Declined";
+
 @end
