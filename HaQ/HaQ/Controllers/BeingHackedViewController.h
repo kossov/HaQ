@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BeingHackedViewController : UIViewController
+@interface BeingHackedViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *TargetsSearchBar;
+@property (weak, nonatomic) IBOutlet UITableView *TargetsTableView;
 
 @end

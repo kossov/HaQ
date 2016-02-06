@@ -15,6 +15,4 @@
 - (IBAction)ShowTargetsButtonAction:(id)sender;
 - (IBAction)CollectItemsButtonAction:(id)sender;
 
-+ (void)fetchUserData;
-
 @end

@@ -10,12 +10,25 @@
 
 @implementation Friendship
 
+@dynamic byUser;
+@dynamic toUser;
+@dynamic isApproved;
+
 +(void)load {
     [self registerSubclass];
 }
 
 +(NSString *)parseClassName {
     return @"Friendship";
+}
+
++(Friendship *) friendshipWithUser:(NSString*) byUser toUser:(NSString*) toUser {
+    Friendship *friendship = [Friendship object];
+    friendship.byUser = byUser;
+    friendship.toUser = toUser;
+    friendship.isApproved = NO;
+    
+    return friendship;
 }
 
 @end

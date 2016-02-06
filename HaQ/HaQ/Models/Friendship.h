@@ -11,6 +11,11 @@
 
 @interface Friendship : PFObject<PFSubclassing>
 
+@property NSString* byUser;
+@property NSString* toUser;
+@property BOOL isApproved;
+
 +(NSString *)parseClassName;
++(Friendship *) friendshipWithUser:(NSString*) user toUser:(NSString*) username;
 
 @end

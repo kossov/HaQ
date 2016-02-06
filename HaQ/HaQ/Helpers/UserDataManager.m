@@ -28,4 +28,14 @@ static UserDataManager *dataManager = nil;
     return self;
 }
 
++ (void)fetchUserData {
+    PFUser *user = [PFUser currentUser];
+    
+    if (!user) {
+        return;
+    }
+    
+    
+}
+
 @end

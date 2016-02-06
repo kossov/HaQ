@@ -6,32 +6,106 @@
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "AddTargetViewController.h"
+#import "HelperMethods.h"
+#import "Friendship.h"
+#import "GlobalConstants.h"
 
 @interface AddTargetViewController ()
 
 @end
 
-@implementation AddTargetViewController
+@implementation AddTargetViewController {
+    NSMutableArray *_allTargetUsernames;
+    NSMutableArray *_displayItems;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    PFQuery *query = [PFUser query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSString *errorMessage = [HelperMethods getStringFromError:error];
+            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorMessage];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        
+        _allTargetUsernames = [NSMutableArray arrayWithArray:objects];
+        _displayItems = [NSMutableArray arrayWithArray:objects];
+        self.TargetNamesTableView.dataSource = self;
+        [self.TargetNamesTableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    self.TargetNamesTableView.delegate = self;
+    self.TargetNamesSearchBar.delegate = self;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _displayItems.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"TargetNameCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat: @"%@", ((PFUser*)_displayItems[indexPath.row]).username];
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFUser *selectedUser = ((PFUser*)_displayItems[indexPath.row]);
+    PFUser *currentUser = [PFUser currentUser];
+    Friendship *friendship = [Friendship friendshipWithUser:currentUser.username toUser:selectedUser.username];
+    __block UIAlertController *alert;
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [friendship saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            NSString *errorString = [HelperMethods getStringFromError:error];
+            alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+            [self presentViewController:alert animated:YES completion:^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }];
+        }
+    }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 0) {
+        [_displayItems removeAllObjects];
+        [_displayItems addObjectsFromArray:_allTargetUsernames];
+    } else {
+        [_displayItems removeAllObjects];
+        for (int i = 0; i<_allTargetUsernames.count; i++) {
+            PFUser *currentUser = _allTargetUsernames[i];
+            NSRange range = [currentUser.username rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (range.location != NSNotFound) {
+                [_displayItems addObject:currentUser];
+            }
+        }
+    }
+    
+    [self.TargetNamesTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

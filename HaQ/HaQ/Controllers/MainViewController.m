@@ -20,6 +20,8 @@
 #import "MainViewController.h"
 #import "LoginViewController.h"
 #import "UserDataManager.h"
+#import "HelperMethods.h"
+#import "GlobalConstants.h"
 
 @interface MainViewController ()
 
@@ -42,11 +44,11 @@
         return;
     }
     
-    UIBarButtonItem *myButton = [[UIBarButtonItem alloc] initWithTitle:@"LogOut"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(logOutUser)];
-    self.navigationItem.rightBarButtonItem = myButton;
+    UIBarButtonItem *logOutBtn = [[UIBarButtonItem alloc] initWithTitle:@"LogOut"
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(logOutUser)];
+    self.navigationItem.rightBarButtonItem = logOutBtn;
     [self startLocationServices];
 }
 
@@ -62,8 +64,12 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error) {
-            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-            NSLog(@"%@", errorString);
+            NSString *errorString = [HelperMethods getStringFromError:error];
+            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+            [self presentViewController:alert animated:YES completion:^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }];
+            
             return;
         }
         
@@ -80,20 +86,11 @@
 }
 
 - (IBAction)ShowTargetsButtonAction:(id)sender {
+    [self performSegueWithIdentifier:@"ShowTargets" sender:self];
 }
 
 - (IBAction)CollectItemsButtonAction:(id)sender {
     [self performSegueWithIdentifier:@"CollectItems" sender:self];
-}
-
-+ (void)fetchUserData {
-    PFUser *user = [PFUser currentUser];
-    
-    if (!user) {
-        return;
-    }
-    
-    
 }
 
 - (void)startLocationServices {
@@ -115,15 +112,11 @@
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     if (fabs(howRecent) < 15.0) {
-        
-        // PUSH DATA TO THE SERVER
+        PFUser *user = [PFUser currentUser];
         PFGeoPoint *currentLocation = [PFGeoPoint geoPointWithLocation:location];
-        
-        
-        // If the event is recent, do something with it.
-//        NSLog(@"latitude %+.6f, longitude %+.6f\n",
-//              location.coordinate.latitude,
-//              location.coordinate.longitude);
+        [UserDataManager getInstance].currentPosition = currentLocation;
+        user[@"location"] = currentLocation;
+        [user saveInBackground];
     }
 }
 

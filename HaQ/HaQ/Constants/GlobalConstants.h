@@ -20,5 +20,12 @@ extern NSString *const InvalidUsernameMessage;
 extern NSString *const InvalidPasswordMessage;
 extern NSString *const InvalidConfirmPasswordMessage;
 extern NSString *const InvalidMatchPasswordsMessage;
+extern NSString *const TargetContactSendMessageTitle;
+extern NSString *const TargetContactSendMessageDescription;
+extern NSString *const SomethingBadHappenedTitleMessage;
+extern NSString *const TargetContactApprovedMessageTitle;
+extern NSString *const TargetContactApprovedMessageDescription;
+extern NSString *const TargetContactDeclinedMessageTitle;
+extern NSString *const TargetContactDeclinedMessageDescription;
 
 @end

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddTargetViewController : UIViewController
+@interface AddTargetViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *TargetNamesSearchBar;
+
+@property (weak, nonatomic) IBOutlet UITableView *TargetNamesTableView;
 
 @end

@@ -15,6 +15,10 @@
 @property NSMutableArray *itemPositions;
 @property NSMutableArray *targetPositions;
 
+@property NSMutableArray *targets;
+
 + (UserDataManager*)getInstance;
+
++ (void)fetchUserData;
 
 @end

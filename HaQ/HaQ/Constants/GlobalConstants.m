@@ -20,5 +20,12 @@ NSString *const InvalidUsernameMessage = @"Username must be with at least 5 symb
 NSString *const InvalidPasswordMessage = @"You forgot your password! At least 5 symbols, pleeease..";
 NSString *const InvalidConfirmPasswordMessage = @"Confirm password with at least 5!!1 symbols!";
 NSString *const InvalidMatchPasswordsMessage = @"Passwords don't match!";
+NSString *const TargetContactSendMessageTitle = @"Target Contact Send!";
+NSString *const TargetContactSendMessageDescription = @"Waiting for approval.. they might fear you!";
+NSString *const SomethingBadHappenedTitleMessage = @"Whooops!";
+NSString *const TargetContactApprovedMessageTitle = @"Target Contact Approved!";
+NSString *const TargetContactApprovedMessageDescription = @"Watch out, you are vurnable too.";
+NSString *const TargetContactDeclinedMessageTitle = @"Target Contact Declined!";
+NSString *const TargetContactDeclinedMessageDescription = @"I bet you are better :)";
 
 @end

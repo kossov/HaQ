@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Friendship.h"
 
 @interface HelperMethods : NSObject
 
@@ -16,5 +17,7 @@
                               password:(NSString*) password
                         andConfirmPass:(NSString*) confirm;
 + (UIAlertController*)getAlert:(NSString*) title andMessage:(NSString*) message;
++ (NSString*)getStringFromError:(NSError*) error;
++ (NSString*)getTargetUsername:(Friendship*) object;
 
 @end

@@ -23,4 +23,8 @@
     [self.navigationController pushViewController:toVC animated:YES];
 }
 
+- (void)checkForItemsOrCreate {
+    
+}
+
 @end

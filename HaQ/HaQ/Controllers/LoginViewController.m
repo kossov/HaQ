@@ -12,6 +12,7 @@
 #import "MainViewController.h"
 #import "RegisterViewController.h"
 #import "HelperMethods.h"
+#import "GlobalConstants.h"
 
 @interface LoginViewController () {
     UIAlertController *_alert;
@@ -45,8 +46,8 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self MoveToMainStage];
         } else {
-            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-            _alert = [HelperMethods getAlert:@"Whooops!" andMessage:errorString];
+            NSString *errorString = [HelperMethods getStringFromError:error];
+            _alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
             [self presentViewController:_alert animated:YES completion:nil];
         }
     }];

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		626BA0DCBFEE2A74D640F623 /* libPods-HaQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FE73FC311619F2C593FC /* libPods-HaQ.a */; };
-		FC5FC30A1C63BF60004C0AD6 /* UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3091C63BF60004C0AD6 /* UserLocation.m */; };
 		FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */; };
 		FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */; };
 		FC6256591C6134D100FCAE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6256581C6134D100FCAE56 /* main.m */; };
@@ -31,14 +30,17 @@
 		FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F021C64D5E800DA6EFA /* AddTargetViewController.m */; };
 		FCD11F061C64DD7900DA6EFA /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F051C64DD7900DA6EFA /* UserDataManager.m */; };
 		FCD11F0C1C64E81500DA6EFA /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */; };
+		FCD11F161C652A3600DA6EFA /* TargetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F151C652A3600DA6EFA /* TargetCell.m */; };
+		FCD11F1D1C652C2A00DA6EFA /* TargetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD11F1C1C652C2A00DA6EFA /* TargetCell.xib */; };
+		FCD11F201C65762300DA6EFA /* PendingTargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */; };
+		FCD11F271C6589C600DA6EFA /* DecideForPendingTarget.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD11F261C6589C600DA6EFA /* DecideForPendingTarget.xib */; };
+		FCD11F2A1C6589F000DA6EFA /* DecideForPendingTargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F291C6589F000DA6EFA /* DecideForPendingTargetView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56B9FE73FC311619F2C593FC /* libPods-HaQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaQ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5237C04DDC5F1219AA4EA24 /* Pods-HaQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.release.xcconfig"; sourceTree = "<group>"; };
 		E2835DEEC783EE3201BBD73D /* Pods-HaQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.debug.xcconfig"; sourceTree = "<group>"; };
-		FC5FC3081C63BF60004C0AD6 /* UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLocation.h; path = Models/UserLocation.h; sourceTree = "<group>"; };
-		FC5FC3091C63BF60004C0AD6 /* UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLocation.m; path = Models/UserLocation.m; sourceTree = "<group>"; };
 		FC5FC30B1C63BF77004C0AD6 /* ItemLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemLocation.h; path = Models/ItemLocation.h; sourceTree = "<group>"; };
 		FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemLocation.m; path = Models/ItemLocation.m; sourceTree = "<group>"; };
 		FC5FC30F1C63C351004C0AD6 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNumberGenerator.h; path = Helpers/RandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 		FCD11F051C64DD7900DA6EFA /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataManager.m; path = Helpers/UserDataManager.m; sourceTree = "<group>"; };
 		FCD11F0A1C64E81500DA6EFA /* GoogleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMapViewController.h; path = Controllers/GoogleMapViewController.h; sourceTree = "<group>"; };
 		FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleMapViewController.m; path = Controllers/GoogleMapViewController.m; sourceTree = "<group>"; };
+		FCD11F141C652A3600DA6EFA /* TargetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetCell.h; path = Views/TargetCell.h; sourceTree = "<group>"; };
+		FCD11F151C652A3600DA6EFA /* TargetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetCell.m; path = Views/TargetCell.m; sourceTree = "<group>"; };
+		FCD11F1C1C652C2A00DA6EFA /* TargetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TargetCell.xib; path = Views/TargetCell.xib; sourceTree = "<group>"; };
+		FCD11F1E1C65762300DA6EFA /* PendingTargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PendingTargetsViewController.h; path = Controllers/PendingTargetsViewController.h; sourceTree = "<group>"; };
+		FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PendingTargetsViewController.m; path = Controllers/PendingTargetsViewController.m; sourceTree = "<group>"; };
+		FCD11F261C6589C600DA6EFA /* DecideForPendingTarget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DecideForPendingTarget.xib; path = Views/DecideForPendingTarget.xib; sourceTree = "<group>"; };
+		FCD11F281C6589F000DA6EFA /* DecideForPendingTargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecideForPendingTargetView.h; path = Views/DecideForPendingTargetView.h; sourceTree = "<group>"; };
+		FCD11F291C6589F000DA6EFA /* DecideForPendingTargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecideForPendingTargetView.m; path = Views/DecideForPendingTargetView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +125,6 @@
 		FC56F1171C6165B100E7DA32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FC5FC3081C63BF60004C0AD6 /* UserLocation.h */,
-				FC5FC3091C63BF60004C0AD6 /* UserLocation.m */,
 				FC5FC30B1C63BF77004C0AD6 /* ItemLocation.h */,
 				FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */,
 				FCD11EF21C64B97900DA6EFA /* Friendship.h */,
@@ -161,6 +169,7 @@
 		FC6256561C6134D100FCAE56 /* HaQ */ = {
 			isa = PBXGroup;
 			children = (
+				FCD11F0F1C651CFC00DA6EFA /* Views */,
 				FCD11F0E1C64EEB300DA6EFA /* Resources */,
 				FCD11EEB1C64AA3E00DA6EFA /* Constants */,
 				FC5FC30E1C63C32E004C0AD6 /* Helpers */,
@@ -206,6 +215,8 @@
 				FCD11F021C64D5E800DA6EFA /* AddTargetViewController.m */,
 				FCD11F0A1C64E81500DA6EFA /* GoogleMapViewController.h */,
 				FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */,
+				FCD11F1E1C65762300DA6EFA /* PendingTargetsViewController.h */,
+				FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +237,19 @@
 			children = (
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		FCD11F0F1C651CFC00DA6EFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCD11F141C652A3600DA6EFA /* TargetCell.h */,
+				FCD11F151C652A3600DA6EFA /* TargetCell.m */,
+				FCD11F1C1C652C2A00DA6EFA /* TargetCell.xib */,
+				FCD11F261C6589C600DA6EFA /* DecideForPendingTarget.xib */,
+				FCD11F281C6589F000DA6EFA /* DecideForPendingTargetView.h */,
+				FCD11F291C6589F000DA6EFA /* DecideForPendingTargetView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +320,9 @@
 			files = (
 				FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */,
 				FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */,
+				FCD11F271C6589C600DA6EFA /* DecideForPendingTarget.xib in Resources */,
 				FC6256621C6134D200FCAE56 /* Main.storyboard in Resources */,
+				FCD11F1D1C652C2A00DA6EFA /* TargetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,14 +393,16 @@
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
 				FCA331481C636C8500F616AC /* MainViewController.m in Sources */,
 				FCD11EF41C64B97900DA6EFA /* Friendship.m in Sources */,
+				FCD11F201C65762300DA6EFA /* PendingTargetsViewController.m in Sources */,
 				FCD11EFD1C64D1D000DA6EFA /* TargetsViewController.m in Sources */,
 				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
+				FCD11F161C652A3600DA6EFA /* TargetCell.m in Sources */,
 				FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */,
+				FCD11F2A1C6589F000DA6EFA /* DecideForPendingTargetView.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
 				FCD11F061C64DD7900DA6EFA /* UserDataManager.m in Sources */,
 				FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */,
 				FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */,
-				FC5FC30A1C63BF60004C0AD6 /* UserLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

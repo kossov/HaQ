@@ -6,9 +6,10 @@
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "RegisterViewController.h"
 #import "HelperMethods.h"
-#import <Parse/Parse.h>
+#import "GlobalConstants.h"
 
 @interface RegisterViewController ()
 
@@ -56,8 +57,8 @@
             [_alert addAction:alertOkButton];
             [self presentViewController:_alert animated:YES completion:nil];
         } else {
-            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-            _alert = [HelperMethods getAlert:@"Whooops!" andMessage:errorString];
+            NSString *errorString = [HelperMethods getStringFromError:error];
+            _alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
             [self presentViewController:_alert animated:YES completion:nil];
         }
     }];

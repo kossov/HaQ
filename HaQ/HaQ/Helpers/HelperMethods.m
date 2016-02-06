@@ -6,9 +6,11 @@
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "HelperMethods.h"
 #import "Validator.h"
 #import "GlobalConstants.h"
+#import "Friendship.h"
 
 @implementation HelperMethods
 
@@ -78,6 +80,21 @@
                 [alert dismissViewControllerAnimated:YES completion:nil];
                 
             }];
+}
+
++ (NSString*)getStringFromError:(NSError *)error {
+    return [[error userInfo] objectForKey:@"error"];
+}
+
++(NSString*)getTargetUsername:(Friendship*) object {
+    NSString *username;
+    if ([PFUser currentUser].username == object.byUser) {
+        username = object.toUser;
+    } else {
+        username = object.byUser;
+    }
+    
+    return username;
 }
 
 @end
