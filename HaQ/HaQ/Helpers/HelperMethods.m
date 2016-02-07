@@ -11,6 +11,7 @@
 #import "Validator.h"
 #import "GlobalConstants.h"
 #import "Friendship.h"
+#import "RandomNumberGenerator.h"
 
 @implementation HelperMethods
 
@@ -95,6 +96,31 @@
     }
     
     return username;
+}
+
++(NSDate*)getEarliestTodaysDate {
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:now];
+    [components setHour:0];
+    [components setMinute:1];
+    [components setSecond:0];
+    NSDate *morningStart = [calendar dateFromComponents:components];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *strFromDate = [formatter stringFromDate:morningStart];
+    return [formatter dateFromString:strFromDate];
+}
+
+// TOP LEFT: (42.722142, 23.244152)
+// TOP RIGHT: (42.722142, 23.363800)
+// BOTTOM RIGHT: (42.722552, 23.244152)
+// BOTTOM LEFT: (42.722552, 23.363800)
++(PFGeoPoint*)getRandomLocationInSofia {
+    double latitude = ((42 * 1000000.0) + [RandomNumberGenerator getRandomNumberBetween:722142 to:722552]) / 1000000;
+    double longitude = ((23 * 1000000.0) + [RandomNumberGenerator getRandomNumberBetween:244152 to:363800]) / 1000000;
+    return [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 }
 
 @end

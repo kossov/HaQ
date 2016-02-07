@@ -14,4 +14,6 @@ extern NSString *const TargetContactApproved;
 extern NSString *const TargetContactPending;
 extern NSString *const TargetContactDeclined;
 
+extern NSString *const ItemMoney;
+
 @end

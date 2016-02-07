@@ -7,7 +7,7 @@
 //
 
 #import "LocationManager.h"
-#import "UserDataManager.h"
+#import "DataManager.h"
 
 @implementation LocationManager
 
@@ -49,7 +49,7 @@ static LocationManager *locationManager = nil;
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     if (fabs(howRecent) < 15.0) {
-        [[UserDataManager getInstance] pushUserLocation:location];
+        [[DataManager getInstance] pushUserLocation:location];
     }
 }
 

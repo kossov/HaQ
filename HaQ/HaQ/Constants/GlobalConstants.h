@@ -16,6 +16,8 @@ extern NSInteger const UsernameMaxLength;
 extern NSInteger const PasswordMinLength;
 extern NSInteger const PasswordMaxLength;
 
+extern NSInteger const ItemsPerDay;
+
 extern NSString *const InvalidUsernameMessage;
 extern NSString *const InvalidPasswordMessage;
 extern NSString *const InvalidConfirmPasswordMessage;
@@ -29,5 +31,9 @@ extern NSString *const TargetContactDeclinedMessageTitle;
 extern NSString *const TargetContactDeclinedMessageDescription;
 extern NSString *const TargetContactSuchContactAlreadyExistsMessageTitle;
 extern NSString *const TargetContactSuchContactAlreadyExistsMessageDescription;
+extern NSString *const ItemAlreadyClaimedMessageTitle;
+extern NSString *const ItemAlreadyClaimedMessageDescription;
+extern NSString *const ItemSuccessfullyClaimedMessageTitle;
+extern NSString *const ItemSuccessfullyClaimedMessageDescription;
 
 @end

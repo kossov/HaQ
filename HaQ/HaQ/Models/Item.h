@@ -9,8 +9,14 @@
 #import <Parse/Parse.h>
 #import <Foundation/Foundation.h>
 
-@interface ItemLocation : PFObject<PFSubclassing>
+@interface Item : PFObject<PFSubclassing>
+
+@property PFGeoPoint *location;
+@property NSString *name;
+@property BOOL isTaken;
+@property PFUser *takenBy;
 
 +(NSString *)parseClassName;
++(Item *) itemWithName:(NSString*) name andLocation:(PFGeoPoint*) location;
 
 @end

@@ -6,13 +6,16 @@
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
-#import "UserDataManager.h"
+#import "DataManager.h"
+#import "Item.h"
+#import "HelperMethods.h"
+#import "GlobalConstants.h"
 
-@implementation UserDataManager
+@implementation DataManager
 
-static UserDataManager *dataManager = nil;
+static DataManager *dataManager = nil;
 
-+ (UserDataManager*)getInstance {
++ (DataManager*)getInstance {
     if (dataManager == nil) {
         dataManager = [[super alloc] init];
     }
@@ -28,7 +31,7 @@ static UserDataManager *dataManager = nil;
     return self;
 }
 
-+ (void)fetchUserData {
++ (void)fetchData {
     PFUser *user = [PFUser currentUser];
     
     if (!user) {
@@ -40,7 +43,7 @@ static UserDataManager *dataManager = nil;
 - (void)pushUserLocation:(CLLocation*)location {
     PFUser *user = [PFUser currentUser];
     PFGeoPoint *currentLocation = [PFGeoPoint geoPointWithLocation:location];
-    [UserDataManager getInstance].currentPosition = currentLocation;
+    [DataManager getInstance].currentPosition = currentLocation;
     user[@"location"] = currentLocation;
     [user saveInBackground];
 }

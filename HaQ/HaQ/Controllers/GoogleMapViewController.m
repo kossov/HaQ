@@ -7,56 +7,97 @@
 //
 
 #import <GoogleMaps/GoogleMaps.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "GoogleMapViewController.h"
-#import "UserDataManager.h"
+#import "DataManager.h"
+#import "Item.h"
+#import "HelperMethods.h"
+#import "GlobalConstants.h"
 
 @implementation GoogleMapViewController {
     GMSMapView *_mapView;
+    PFGeoPoint *_currentUserPosition;
+    NSArray *_currentItems;
+    NSArray *_currentTargets;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PFGeoPoint *currentUserPosition = [UserDataManager getInstance].currentPosition;
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:currentUserPosition.latitude
-                                                            longitude:currentUserPosition.longitude
+    UIBarButtonItem *refreshTargetsBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                       target:self
+                                                                                       action:@selector(updateMap)];
+    self.navigationItem.rightBarButtonItem = refreshTargetsBtn;
+
+    _currentUserPosition = [DataManager getInstance].currentPosition;
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:_currentUserPosition.latitude
+                                                            longitude:_currentUserPosition.longitude
                                                                  zoom:15];
     _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    [self addMarkers];
+    [self updateMap];
     
     self.view = _mapView;
 }
 
 - (void)addMarkers {
+    GMSMarker *userMarker = [[GMSMarker alloc] init];
+    userMarker.title = @"That's you!";
+    userMarker.icon = [UIImage imageNamed:@"glow-marker"];
+    userMarker.position = CLLocationCoordinate2DMake(_currentUserPosition.latitude, _currentUserPosition.longitude);
+    userMarker.map = _mapView;
     
-    
-    NSMutableArray *itemsPositions = [UserDataManager getInstance].itemPositions;
-    NSMutableArray *targetsPositions = [UserDataManager getInstance].targetPositions;
-    
+    UIColor *color = [UIColor colorWithHue:.5f saturation:1.f brightness:1.f alpha:1.0f];
     if (self.mustShowItems) {
-        for (int i = 0; i<itemsPositions.count; i++) {
-            PFGeoPoint *currentItem = (PFGeoPoint*)[itemsPositions objectAtIndex:i];
-            double longitude = currentItem.longitude;
-            double latitude = currentItem.latitude;
+        for (int i = 0; i<_currentItems.count; i++) {
+            Item *currentItem = (Item*)[_currentItems objectAtIndex:i];
+            
+            double longitude = currentItem.location.longitude;
+            double latitude = currentItem.location.latitude;
             
             GMSMarker *itemMarker = [[GMSMarker alloc] init];
-            itemMarker.title = @"Briefcase!";
-            itemMarker.icon = [UIImage imageNamed:@"briefcase"];
-            itemMarker.position = CLLocationCoordinate2DMake(longitude, latitude);
+            itemMarker.title = @"Money!";
+            itemMarker.icon = [UIImage imageNamed:@"icon_money"];
+            itemMarker.position = CLLocationCoordinate2DMake(latitude, longitude);
+            itemMarker.appearAnimation = kGMSMarkerAnimationPop;
             itemMarker.map = _mapView;
         }
     } else {
-        for (int i = 0; i<targetsPositions.count; i++) {
-            PFGeoPoint *currentTarget = (PFGeoPoint*)[targetsPositions objectAtIndex:i];
+        for (int i = 0; i<_currentTargets.count; i++) {
+            PFGeoPoint *currentTarget = (PFGeoPoint*)[_currentTargets objectAtIndex:i];
             double longitude = currentTarget.longitude;
             double latitude = currentTarget.latitude;
             
             GMSMarker *targetMarker = [[GMSMarker alloc] init];
             targetMarker.title = @"Unknown Hacker!";
-            targetMarker.icon = [UIImage imageNamed:@"glow-marker"];
-            targetMarker.position = CLLocationCoordinate2DMake(longitude, latitude);
+            targetMarker.position = CLLocationCoordinate2DMake(latitude, longitude);
+            targetMarker.appearAnimation = kGMSMarkerAnimationPop;
+            targetMarker.icon = [GMSMarker markerImageWithColor:color];
             targetMarker.map = _mapView;
         }
     }
+}
+
+- (void)updateMap {
+    [_mapView clear];
+    [self updateMapData];
+}
+
+- (void)updateMapData {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSDate *todaysDate = [HelperMethods getEarliestTodaysDate];
+    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+    [query whereKey:@"createdAt" greaterThan:todaysDate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (error) {
+            NSString *errorString = [HelperMethods getStringFromError:error];
+            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
+        _currentItems = [NSArray arrayWithArray:objects];
+        [self addMarkers];
+    }];
 }
 
 @end

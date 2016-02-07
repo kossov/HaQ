@@ -14,4 +14,6 @@ NSString *const TargetContactApproved = @"Approved";
 NSString *const TargetContactPending = @"Pending";
 NSString *const TargetContactDeclined = @"Declined";
 
+NSString *const ItemMoney = @"Money";
+
 @end

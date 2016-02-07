@@ -9,17 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface UserDataManager : NSObject
+@interface DataManager : NSObject
 
 @property PFGeoPoint *currentPosition;
-@property NSMutableArray *itemPositions;
+@property NSMutableArray *items;
 @property NSMutableArray *targetPositions;
 
 @property NSMutableArray *targets;
 
-+ (UserDataManager*)getInstance;
++ (DataManager*)getInstance;
 
-+ (void)fetchUserData;
++ (void)fetchData;
 
 - (void)pushUserLocation:(CLLocation*)location;
 

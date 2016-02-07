@@ -19,5 +19,7 @@
 + (UIAlertController*)getAlert:(NSString*) title andMessage:(NSString*) message;
 + (NSString*)getStringFromError:(NSError*) error;
 + (NSString*)getTargetUsername:(Friendship*) object;
++ (NSDate*)getEarliestTodaysDate;
++ (PFGeoPoint*)getRandomLocationInSofia;
 
 @end

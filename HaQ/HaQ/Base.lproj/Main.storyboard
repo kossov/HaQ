@@ -249,23 +249,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGJ-3l-KZr">
-                                <rect key="frame" x="20" y="514" width="560" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGJ-3l-KZr">
+                                <rect key="frame" x="20" y="550" width="560" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="t3s-FD-DNZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                 <state key="normal" title="Show Map"/>
                                 <connections>
                                     <action selector="ShowMap:" destination="Ndl-NX-zac" eventType="touchUpInside" id="h2S-Yu-8Bu"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WrI-1t-xWA">
-                                <rect key="frame" x="20" y="28" width="560" height="490"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WrI-1t-xWA">
+                                <rect key="frame" x="20" y="28" width="560" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WrI-1t-xWA" firstAttribute="centerX" secondItem="SpC-EK-Sb0" secondAttribute="centerX" id="ZdI-1e-NYt"/>
-                            <constraint firstItem="oGJ-3l-KZr" firstAttribute="centerX" secondItem="SpC-EK-Sb0" secondAttribute="centerX" id="cRb-zc-ikd"/>
+                            <constraint firstItem="WrI-1t-xWA" firstAttribute="leading" secondItem="SpC-EK-Sb0" secondAttribute="leadingMargin" id="3Eq-20-58c"/>
+                            <constraint firstItem="WrI-1t-xWA" firstAttribute="centerX" secondItem="SpC-EK-Sb0" secondAttribute="centerX" id="B1q-iN-kWV"/>
+                            <constraint firstItem="WrI-1t-xWA" firstAttribute="top" secondItem="k2b-9w-BQI" secondAttribute="bottom" constant="8" symbolic="YES" id="GVH-fg-Pib"/>
+                            <constraint firstItem="oGJ-3l-KZr" firstAttribute="leading" secondItem="WrI-1t-xWA" secondAttribute="leading" id="Hh2-ac-7xq"/>
+                            <constraint firstItem="vdb-1q-g8E" firstAttribute="top" secondItem="oGJ-3l-KZr" secondAttribute="bottom" constant="8" symbolic="YES" id="PX3-aM-xWY"/>
+                            <constraint firstItem="oGJ-3l-KZr" firstAttribute="centerX" secondItem="SpC-EK-Sb0" secondAttribute="centerX" id="WXu-rZ-bTs"/>
+                            <constraint firstItem="oGJ-3l-KZr" firstAttribute="top" secondItem="WrI-1t-xWA" secondAttribute="bottom" constant="8" symbolic="YES" id="fdA-ot-jIa"/>
+                            <constraint firstItem="oGJ-3l-KZr" firstAttribute="trailing" secondItem="WrI-1t-xWA" secondAttribute="trailing" id="qd2-re-w9g"/>
                         </constraints>
                     </view>
                     <connections>
@@ -299,13 +308,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="top" secondItem="Z36-Z2-ptv" secondAttribute="bottom" constant="8" id="Qai-Yc-F21"/>
-                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="leading" secondItem="s9V-0y-K34" secondAttribute="leadingMargin" id="Rf6-Ve-Ui3"/>
+                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="centerX" secondItem="s9V-0y-K34" secondAttribute="centerX" id="CcJ-He-DIK"/>
+                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="leading" secondItem="s9V-0y-K34" secondAttribute="leadingMargin" id="I41-GB-345"/>
+                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="top" secondItem="Z36-Z2-ptv" secondAttribute="bottom" constant="8" id="KIL-aF-GOV"/>
+                            <constraint firstItem="1aF-kh-yNb" firstAttribute="top" secondItem="vQL-Ub-Y74" secondAttribute="bottom" constant="8" symbolic="YES" id="OTB-i6-YiU"/>
                             <constraint firstItem="Z36-Z2-ptv" firstAttribute="top" secondItem="mZC-jn-VX8" secondAttribute="bottom" id="TTe-TF-KL9"/>
                             <constraint firstItem="Z36-Z2-ptv" firstAttribute="leading" secondItem="s9V-0y-K34" secondAttribute="leading" id="VeD-3T-RIe"/>
-                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="centerX" secondItem="Z36-Z2-ptv" secondAttribute="centerX" id="sMF-IQ-Lla"/>
-                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="centerX" secondItem="s9V-0y-K34" secondAttribute="centerX" id="sY2-h7-dfg"/>
-                            <constraint firstItem="1aF-kh-yNb" firstAttribute="top" secondItem="vQL-Ub-Y74" secondAttribute="bottom" constant="8" symbolic="YES" id="wWw-Pv-l1G"/>
+                            <constraint firstItem="vQL-Ub-Y74" firstAttribute="centerX" secondItem="Z36-Z2-ptv" secondAttribute="centerX" id="adU-Le-94N"/>
                         </constraints>
                     </view>
                     <keyCommands/>
@@ -332,27 +341,24 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on any for more details." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J39-yY-1Sm">
                                 <rect key="frame" x="20" y="28" width="560" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="yva-f4-U7x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wuO-zt-wdJ">
-                                <rect key="frame" x="20" y="64" width="560" height="479"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wuO-zt-wdJ">
+                                <rect key="frame" x="20" y="64" width="560" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AZ1-3d-pF4" firstAttribute="top" secondItem="wuO-zt-wdJ" secondAttribute="bottom" constant="8" symbolic="YES" id="5qV-nh-3ms"/>
-                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="leading" secondItem="J39-yY-1Sm" secondAttribute="leading" id="9Em-1u-41g"/>
-                            <constraint firstItem="J39-yY-1Sm" firstAttribute="top" secondItem="i7u-vk-uSf" secondAttribute="bottom" constant="8" symbolic="YES" id="FYe-7M-IA5"/>
-                            <constraint firstItem="J39-yY-1Sm" firstAttribute="leading" secondItem="mGI-Xi-Ftw" secondAttribute="leadingMargin" id="N73-lR-QHX"/>
-                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="trailing" secondItem="J39-yY-1Sm" secondAttribute="trailing" id="ZOr-JA-H99"/>
-                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="top" secondItem="J39-yY-1Sm" secondAttribute="bottom" constant="8" symbolic="YES" id="kP2-El-ucP"/>
-                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="centerX" secondItem="mGI-Xi-Ftw" secondAttribute="centerX" id="xTn-8h-0mt"/>
+                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="centerX" secondItem="mGI-Xi-Ftw" secondAttribute="centerX" id="LhR-dp-dM4"/>
+                            <constraint firstAttribute="bottom" secondItem="wuO-zt-wdJ" secondAttribute="bottom" constant="20" symbolic="YES" id="P13-aw-kN7"/>
+                            <constraint firstItem="J39-yY-1Sm" firstAttribute="leading" secondItem="wuO-zt-wdJ" secondAttribute="leading" id="Wtc-jf-jCe"/>
+                            <constraint firstItem="J39-yY-1Sm" firstAttribute="leading" secondItem="mGI-Xi-Ftw" secondAttribute="leadingMargin" id="XC0-ZV-XO4"/>
+                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="top" secondItem="J39-yY-1Sm" secondAttribute="bottom" constant="8" symbolic="YES" id="oea-za-szt"/>
+                            <constraint firstItem="wuO-zt-wdJ" firstAttribute="trailing" secondItem="J39-yY-1Sm" secondAttribute="trailing" id="rfH-5D-6u3"/>
+                            <constraint firstItem="J39-yY-1Sm" firstAttribute="top" secondItem="i7u-vk-uSf" secondAttribute="bottom" constant="8" symbolic="YES" id="tIE-0s-4iR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="mw3-Bp-7PP"/>
@@ -454,7 +460,11 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="OIk-8B-C9s">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mDa-5C-61e">
                                 <rect key="frame" x="20" y="71" width="560" height="472"/>
@@ -463,13 +473,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mDa-5C-61e" firstAttribute="centerX" secondItem="sR4-77-gWE" secondAttribute="centerX" id="7Ep-o5-v4g"/>
-                            <constraint firstItem="mDa-5C-61e" firstAttribute="top" secondItem="OIk-8B-C9s" secondAttribute="bottom" constant="7" id="9cH-BD-Z9R"/>
+                            <constraint firstItem="mDa-5C-61e" firstAttribute="centerX" secondItem="sR4-77-gWE" secondAttribute="centerX" id="0OZ-hm-Gd1"/>
+                            <constraint firstItem="mDa-5C-61e" firstAttribute="top" secondItem="OIk-8B-C9s" secondAttribute="bottom" constant="7" id="4sC-Mx-xor"/>
                             <constraint firstItem="OIk-8B-C9s" firstAttribute="leading" secondItem="sR4-77-gWE" secondAttribute="leading" id="Axc-JT-VbZ"/>
-                            <constraint firstItem="mDa-5C-61e" firstAttribute="leading" secondItem="sR4-77-gWE" secondAttribute="leadingMargin" id="GGe-t3-YRl"/>
+                            <constraint firstItem="0Hd-cE-Hfw" firstAttribute="top" secondItem="mDa-5C-61e" secondAttribute="bottom" constant="8" symbolic="YES" id="Fka-cL-LMe"/>
                             <constraint firstItem="OIk-8B-C9s" firstAttribute="top" secondItem="cnN-C6-QjM" secondAttribute="bottom" id="KgE-EG-iKC"/>
-                            <constraint firstItem="OIk-8B-C9s" firstAttribute="centerX" secondItem="mDa-5C-61e" secondAttribute="centerX" id="RBM-95-5Ma"/>
-                            <constraint firstItem="0Hd-cE-Hfw" firstAttribute="top" secondItem="mDa-5C-61e" secondAttribute="bottom" constant="8" symbolic="YES" id="ydn-bf-2ZI"/>
+                            <constraint firstItem="mDa-5C-61e" firstAttribute="centerX" secondItem="OIk-8B-C9s" secondAttribute="centerX" id="LMZ-2g-SB4"/>
+                            <constraint firstItem="mDa-5C-61e" firstAttribute="leading" secondItem="sR4-77-gWE" secondAttribute="leadingMargin" id="T82-5N-Smc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="2Hh-J0-TU2"/>

@@ -6,9 +6,9 @@
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
-#import "TargetCell.h"
+#import "PictureCell.h"
 
-@implementation TargetCell
+@implementation PictureCell
 
 - (void)awakeFromNib {
     // Initialization code

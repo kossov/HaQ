@@ -9,8 +9,9 @@
 #import <Parse/Parse.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "AppDelegate.h"
-#import "UserDataManager.h"
+#import "DataManager.h"
 #import "Friendship.h"
+#import "Item.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Friendship registerSubclass];
+    [Item registerSubclass];
+    
     [Parse setApplicationId:@"cm5tjPtfKoRz0TSj1xUiNMyt3zAQ7VTSfF6a2VgW" clientKey:@"FzW0YurxuShdoiFj6RICo069yPIzCBVoKXWTgCZ2"];
     [GMSServices provideAPIKey:@"AIzaSyAloq_exCmGNa2QU1Ycq1VM_D0FYfO_DRI"];
+    
     return YES;
 }
 
@@ -48,8 +52,8 @@
 //    }];
 //    
 //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:15
-//                                                      target:[UserDataManager class]
-//                                                    selector:@selector(fetchUserData)
+//                                                      target:[DataManager class]
+//                                                    selector:@selector(fetchData)
 //                                                    userInfo:nil
 //                                                     repeats:YES];
 //    //and create new timer with async call:

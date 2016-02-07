@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectItemsViewController : UIViewController
+@interface CollectItemsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 - (IBAction)ShowMap:(id)sender;
 

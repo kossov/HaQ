@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "PendingTargetsViewController.h"
-#import "TargetCell.h"
+#import "PictureCell.h"
 #import "HelperMethods.h"
 #import "Friendship.h"
 #import "GlobalConstants.h"
@@ -70,14 +70,14 @@
     Friendship *currentTargetAtCell = (Friendship*)_pendingTargets[indexPath.row];
     static NSString *cellIdentifier = @"PendingTargetCell";
     
-    TargetCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    PictureCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"TargetCell" owner:self options:nil] objectAtIndex:0];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"PictureCell" owner:self options:nil] objectAtIndex:0];
     }
     
     //TODO: ADD IMAGE TO THE CELL
     
-    cell.UsernameLabel.text = [HelperMethods getTargetUsername:currentTargetAtCell];
+    cell.Label.text = [HelperMethods getTargetUsername:currentTargetAtCell];
     
     return cell;
 }

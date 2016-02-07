@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "TargetsViewController.h"
-#import "TargetCell.h"
+#import "PictureCell.h"
 #import "HelperMethods.h"
 #import "Friendship.h"
 #import "GlobalConstants.h"
@@ -56,6 +56,8 @@
         [friendshipToCurrentUser whereKey:@"toUser" equalTo:user.username];
         [friendshipToCurrentUser whereKey:@"isApproved" equalTo:TargetContactApproved];
         [friendshipToCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects2, NSError * _Nullable error2) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
             if (error2) {
                 NSString *errorString = [HelperMethods getStringFromError:error2];
                 UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
@@ -69,8 +71,6 @@
             
             self.TargetsTableView.dataSource = self;
             [self.TargetsTableView reloadData];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
         }];
     }];
 }
@@ -83,14 +83,15 @@
     Friendship *currentTargetAtCell = (Friendship*)_displayTargets[indexPath.row];
     static NSString *cellIdentifier = @"TargetCell";
     
-    TargetCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    PictureCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"TargetCell" owner:self options:nil] objectAtIndex:0];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"PictureCell" owner:self options:nil] objectAtIndex:0];
     }
     
     //TODO: ADD IMAGE TO THE CELL
     
-    cell.UsernameLabel.text = [HelperMethods getTargetUsername:currentTargetAtCell];
+    // = NO;
+    cell.Label.text = [HelperMethods getTargetUsername:currentTargetAtCell];
     
     return cell;
 }
@@ -116,6 +117,11 @@
 
 - (void)addTarget {
     [self performSegueWithIdentifier:@"AddTarget" sender:self];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

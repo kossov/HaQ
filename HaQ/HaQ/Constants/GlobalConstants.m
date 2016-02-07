@@ -16,6 +16,8 @@ NSInteger const UsernameMaxLength = 10;
 NSInteger const PasswordMinLength = 5;
 NSInteger const PasswordMaxLength = 10;
 
+NSInteger const ItemsPerDay = 5;
+
 NSString *const InvalidUsernameMessage = @"Username must be with at least 5 symbols.";
 NSString *const InvalidPasswordMessage = @"You forgot your password! At least 5 symbols, pleeease..";
 NSString *const InvalidConfirmPasswordMessage = @"Confirm password with at least 5!!1 symbols!";
@@ -29,5 +31,9 @@ NSString *const TargetContactDeclinedMessageTitle = @"Target Contact Declined!";
 NSString *const TargetContactDeclinedMessageDescription = @"I bet you are better :)";
 NSString *const TargetContactSuchContactAlreadyExistsMessageTitle = @"Target Contact already sent..";
 NSString *const TargetContactSuchContactAlreadyExistsMessageDescription = @"It might not be accepted or still pending or existing.";
+NSString *const ItemAlreadyClaimedMessageTitle = @"Someone already claimed that item!";
+NSString *const ItemAlreadyClaimedMessageDescription = @"He must have been hacked and traced. Dayuumn!";
+NSString *const ItemSuccessfullyClaimedMessageTitle = @"Item claimed!";
+NSString *const ItemSuccessfullyClaimedMessageDescription = @"#MUSTBENICE";
 
 @end
