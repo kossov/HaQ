@@ -10,6 +10,7 @@
 
 @interface MainViewController : UIViewController <CLLocationManagerDelegate>
 
+@property (nonatomic , strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UICollectionView *StatusBarGrid;
 - (IBAction)StartHackingButtonAction:(id)sender;
 - (IBAction)ShowTargetsButtonAction:(id)sender;

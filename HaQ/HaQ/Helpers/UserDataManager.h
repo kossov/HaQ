@@ -21,4 +21,6 @@
 
 + (void)fetchUserData;
 
+- (void)pushUserLocation:(CLLocation*)location;
+
 @end

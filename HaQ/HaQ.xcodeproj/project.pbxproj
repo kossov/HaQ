@@ -11,6 +11,7 @@
 		FC13BB8C1C66809C002AA905 /* DecideForPendingTargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */; };
 		FC5FC30D1C63BF77004C0AD6 /* ItemLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */; };
 		FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */; };
+		FC60EAE11C66E8C5006F2C21 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC60EAE01C66E8C5006F2C21 /* LocationManager.m */; };
 		FC6256591C6134D100FCAE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6256581C6134D100FCAE56 /* main.m */; };
 		FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565B1C6134D100FCAE56 /* AppDelegate.m */; };
 		FC6256621C6134D200FCAE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6256601C6134D200FCAE56 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		FC5FC30C1C63BF77004C0AD6 /* ItemLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemLocation.m; path = Models/ItemLocation.m; sourceTree = "<group>"; };
 		FC5FC30F1C63C351004C0AD6 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomNumberGenerator.h; path = Helpers/RandomNumberGenerator.h; sourceTree = "<group>"; };
 		FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomNumberGenerator.m; path = Helpers/RandomNumberGenerator.m; sourceTree = "<group>"; };
+		FC60EADF1C66E8C5006F2C21 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = Helpers/LocationManager.h; sourceTree = "<group>"; };
+		FC60EAE01C66E8C5006F2C21 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = Helpers/LocationManager.m; sourceTree = "<group>"; };
 		FC6256541C6134D100FCAE56 /* HaQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6256581C6134D100FCAE56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC62565A1C6134D100FCAE56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				FCD11EE91C64A87900DA6EFA /* HelperMethods.m */,
 				FCD11F041C64DD7900DA6EFA /* UserDataManager.h */,
 				FCD11F051C64DD7900DA6EFA /* UserDataManager.m */,
+				FC60EADF1C66E8C5006F2C21 /* LocationManager.h */,
+				FC60EAE01C66E8C5006F2C21 /* LocationManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
 				FCD11F061C64DD7900DA6EFA /* UserDataManager.m in Sources */,
+				FC60EAE11C66E8C5006F2C21 /* LocationManager.m in Sources */,
 				FC13BB8C1C66809C002AA905 /* DecideForPendingTargetsViewController.m in Sources */,
 				FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */,
 				FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */,

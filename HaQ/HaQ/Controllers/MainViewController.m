@@ -22,6 +22,7 @@
 #import "UserDataManager.h"
 #import "HelperMethods.h"
 #import "GlobalConstants.h"
+#import "LocationManager.h"
 
 @interface MainViewController ()
 
@@ -29,9 +30,7 @@
 
 @end
 
-@implementation MainViewController {
-    CLLocationManager *_locationManager;
-}
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,7 +48,7 @@
                                                                  target:self
                                                                  action:@selector(logOutUser)];
     self.navigationItem.rightBarButtonItem = logOutBtn;
-    [self startLocationServices];
+    [[LocationManager getInstance] startLocationServices];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -91,33 +90,6 @@
 
 - (IBAction)CollectItemsButtonAction:(id)sender {
     [self performSegueWithIdentifier:@"CollectItems" sender:self];
-}
-
-- (void)startLocationServices {
-    if (nil == _locationManager)
-        _locationManager = [[CLLocationManager alloc] init];
-    
-    _locationManager.delegate = self;
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    
-    _locationManager.distanceFilter = 1; // meters
-    
-    [_locationManager startUpdatingLocation];
-}
-
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations {
-    // If it's a relatively recent event, turn off updates to save power.
-    CLLocation* location = [locations lastObject];
-    NSDate* eventDate = location.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (fabs(howRecent) < 15.0) {
-        PFUser *user = [PFUser currentUser];
-        PFGeoPoint *currentLocation = [PFGeoPoint geoPointWithLocation:location];
-        [UserDataManager getInstance].currentPosition = currentLocation;
-        user[@"location"] = currentLocation;
-        [user saveInBackground];
-    }
 }
 
 @end

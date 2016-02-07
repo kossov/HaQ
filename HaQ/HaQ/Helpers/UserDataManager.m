@@ -35,7 +35,14 @@ static UserDataManager *dataManager = nil;
         return;
     }
     
-    
+}
+
+- (void)pushUserLocation:(CLLocation*)location {
+    PFUser *user = [PFUser currentUser];
+    PFGeoPoint *currentLocation = [PFGeoPoint geoPointWithLocation:location];
+    [UserDataManager getInstance].currentPosition = currentLocation;
+    user[@"location"] = currentLocation;
+    [user saveInBackground];
 }
 
 @end

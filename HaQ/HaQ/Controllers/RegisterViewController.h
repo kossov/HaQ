@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface RegisterViewController : UIViewController <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *UsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordConfirmTextField;
+
+- (IBAction)CameraButtonAction:(id)sender;
+- (IBAction)MediaButtonAction:(id)sender;
 
 - (IBAction)SignUpAction:(id)sender;
 

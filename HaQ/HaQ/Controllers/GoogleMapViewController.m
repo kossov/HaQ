@@ -27,6 +27,8 @@
 }
 
 - (void)addMarkers {
+    
+    
     NSMutableArray *itemsPositions = [UserDataManager getInstance].itemPositions;
     NSMutableArray *targetsPositions = [UserDataManager getInstance].targetPositions;
     

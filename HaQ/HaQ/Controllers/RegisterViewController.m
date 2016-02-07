@@ -30,6 +30,12 @@
     _user = [PFUser user];
 }
 
+- (IBAction)CameraButtonAction:(id)sender {
+}
+
+- (IBAction)MediaButtonAction:(id)sender {
+}
+
 - (IBAction)SignUpAction:(id)sender {
     NSString *username = self.UsernameTextField.text;
     NSString *password = self.PasswordTextField.text;
