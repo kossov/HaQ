@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *UsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordTextField;
-- (IBAction)LogInButtonAction:(id)sender;
+
 - (IBAction)SignUpButtonAction:(id)sender;
+
+- (IBAction)LogInButtonAction:(id)sender;
 
 @end

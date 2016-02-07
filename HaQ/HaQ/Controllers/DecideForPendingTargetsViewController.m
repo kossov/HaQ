@@ -46,34 +46,17 @@
 - (void)saveTargetInBackground {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.decideForPendingTarget saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         UIAlertController *alert;
-        
         if (succeeded) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            alert = [UIAlertController alertControllerWithTitle: TargetContactApprovedMessageTitle
-                                                        message: TargetContactApprovedMessageDescription
-                                                 preferredStyle: UIAlertControllerStyleAlert];
-            
-            UIAlertAction *alertOkButton = [UIAlertAction
-                                            actionWithTitle:@"OK"
-                                            style:UIAlertActionStyleDefault
-                                            handler:^(UIAlertAction * action)
-                                            {
-                                                [alert removeFromParentViewController];
-                                                [self goBackToPending];
-                                            }];
-            [alert addAction:alertOkButton];
-            [self presentViewController:alert animated:YES completion:nil];
+            alert = [HelperMethods getAlert:TargetContactApprovedMessageTitle
+                                 andMessage:TargetContactApprovedMessageDescription];
         } else {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSString *errorString = [HelperMethods getStringFromError:error];
             alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-            [self presentViewController:alert animated:YES completion:nil];
         }
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }];
-}
-
-- (void)goBackToPending {
-    [self performSegueWithIdentifier:@"BackToPendingTargets" sender:self];
 }
 @end

@@ -47,10 +47,10 @@
     [friendshipToCurrentUser whereKey:@"toUser" equalTo:user.username];
     [friendshipToCurrentUser whereKey:@"isApproved" equalTo:TargetContactPending];
     [friendshipToCurrentUser findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {
             NSString *errorString = [HelperMethods getStringFromError:error];
             UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self presentViewController:alert animated:YES completion:nil];
             return;
         }
@@ -59,8 +59,6 @@
         
         self.PendingTargetsTableView.dataSource = self;
         [self.PendingTargetsTableView reloadData];
-        
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 

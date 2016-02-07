@@ -69,9 +69,10 @@
     PFUser *currentUser = [PFUser currentUser];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     PFQuery *suchFriendshipIsNotExistant = [PFQuery queryWithClassName:@"Friendship"];
-    [suchFriendshipIsNotExistant whereKey:@"byUser" notEqualTo:currentUser.username];
-    [suchFriendshipIsNotExistant whereKey:@"toUser" notEqualTo:selectedUser.username];
+    [suchFriendshipIsNotExistant whereKey:@"byUser" equalTo:currentUser.username];
+    [suchFriendshipIsNotExistant whereKey:@"toUser" equalTo:selectedUser.username];
     [suchFriendshipIsNotExistant getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         __block UIAlertController *alert;
         
         if (object) {
@@ -79,7 +80,7 @@
             if (targetContact.isApproved == TargetContactDeclined) {
                 targetContact.isApproved = TargetContactPending;
                 [targetContact saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    
                     alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
                     [self presentViewController:alert animated:YES completion:nil];
                 }];
@@ -96,17 +97,15 @@
         
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [friendship saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (succeeded) {
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
-                [self presentViewController:alert animated:YES completion:nil];
             } else {
                 NSString *errorString = [HelperMethods getStringFromError:error];
                 alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-                [self presentViewController:alert animated:YES completion:^{
-                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                }];
+                
             }
+            [self presentViewController:alert animated:YES completion:nil];
         }];
     }];
 }

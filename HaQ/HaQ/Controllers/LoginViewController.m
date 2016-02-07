@@ -26,8 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.UsernameTextField.delegate = self;
+    self.PasswordTextField.delegate = self;
+    
     // HIDE BACK BUTTON - COMMING FROM MAINVIEWCONTROLLER
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
+}
+
+- (IBAction)SignUpButtonAction:(id)sender {
+    [self performSegueWithIdentifier:@"SignUp" sender:self];
 }
 
 - (IBAction)LogInButtonAction:(id)sender {
@@ -57,8 +64,8 @@
     [self performSegueWithIdentifier:@"LoggedIn" sender:self];
 }
 
-- (IBAction)SignUpButtonAction:(id)sender {
-    [self performSegueWithIdentifier:@"SignUp" sender:self];
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    //[self.customTextField resignFirstResponder];
 }
 
 -(BOOL) textFieldShouldReturn: (UITextField *) textField{

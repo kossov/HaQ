@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "RegisterViewController.h"
 #import "HelperMethods.h"
 #import "GlobalConstants.h"
@@ -22,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.UsernameTextField.delegate = self;
+    self.PasswordTextField.delegate = self;
+    self.PasswordConfirmTextField.delegate = self;
+    
     _user = [PFUser user];
 }
 
@@ -39,20 +44,21 @@
     _user.username = username;
     _user.password = password;
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [_user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (!error) {
             _alert = [UIAlertController alertControllerWithTitle: @"HaQuu!"
-                                                        message: @"Registered successfully!"
-                                                 preferredStyle:UIAlertControllerStyleAlert];
+                                                         message: @"Registered successfully!"
+                                                  preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction *alertOkButton = [UIAlertAction
-                             actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [_alert removeFromParentViewController];
-                                 [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
-                             }];
+                                            actionWithTitle:@"OK"
+                                            style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction * action)
+                                            {
+                                                [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
+                                            }];
             
             [_alert addAction:alertOkButton];
             [self presentViewController:_alert animated:YES completion:nil];

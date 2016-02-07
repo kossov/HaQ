@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *UsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordConfirmTextField;
+
 - (IBAction)SignUpAction:(id)sender;
 
 @end
