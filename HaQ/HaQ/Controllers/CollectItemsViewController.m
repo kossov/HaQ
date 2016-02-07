@@ -6,6 +6,11 @@
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
+//PFUser *testUser = [PFUser currentUser];
+//PFObject *testObj = [testUser objectForKey:@"moneyBags"];
+//NSString *testStr = (NSString*)testObj;
+//NSLog(@"%d", testStr.intValue);
+
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "CollectItemsViewController.h"
 #import "GoogleMapViewController.h"
@@ -60,7 +65,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     Item *claimedItem = ((Item*)_itemsForCurrentLocation[indexPath.row]);
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-    [query whereKey:@"isTaken" notEqualTo:@NO];
+    [query whereKey:@"isTaken" equalTo:@NO];
     [query whereKey:@"objectId" equalTo:claimedItem.objectId];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -74,13 +79,18 @@
         if (!object) {
             UIAlertController *alert = [HelperMethods getAlert:ItemAlreadyClaimedMessageTitle andMessage:ItemAlreadyClaimedMessageDescription];
             [self presentViewController:alert animated:YES completion:nil];
+            
+            [_itemsForCurrentLocation removeObjectAtIndex:indexPath.row];
+            [self.ItemsTableView reloadData];
+
             return;
         }
         
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        PFUser *user = [PFUser currentUser];
         Item *item = ((Item*)object);
         item.isTaken = YES;
-        item.takenBy = [PFUser currentUser];
+        item.takenBy = user;
         
         [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error2) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -92,6 +102,8 @@
                 alert = [HelperMethods getAlert:ItemSuccessfullyClaimedMessageTitle andMessage:ItemSuccessfullyClaimedMessageDescription];
             }
             
+            [user incrementKey:@"moneyBags"];
+            [user saveInBackground];
             [_itemsForCurrentLocation removeObjectAtIndex:indexPath.row];
             [self.ItemsTableView reloadData];
             [self presentViewController:alert animated:YES completion:nil];
@@ -144,6 +156,7 @@
     PFGeoPoint *currentLocation = [DataManager getInstance].currentPosition;
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     [query whereKey:@"location" nearGeoPoint:currentLocation withinKilometers:0.1];
+    [query whereKey:@"isTaken" equalTo:@NO];
     query.limit = ItemsPerDay;
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];

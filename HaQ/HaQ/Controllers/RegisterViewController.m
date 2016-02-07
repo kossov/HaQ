@@ -65,7 +65,8 @@
                                             {
                                                 [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
                                             }];
-            
+            _user[@"moneyBags"] = @3;
+            [_user saveInBackground];
             [_alert addAction:alertOkButton];
             [self presentViewController:_alert animated:YES completion:nil];
         } else {

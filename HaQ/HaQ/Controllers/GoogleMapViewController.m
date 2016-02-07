@@ -86,6 +86,7 @@
     NSDate *todaysDate = [HelperMethods getEarliestTodaysDate];
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     [query whereKey:@"createdAt" greaterThan:todaysDate];
+    [query whereKey:@"isTaken" equalTo:@NO];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {

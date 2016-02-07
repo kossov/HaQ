@@ -28,6 +28,7 @@
     Item *item = [Item object];
     item.name = name;
     item.location = location;
+    item.isTaken = NO;
     
     return item;
 }

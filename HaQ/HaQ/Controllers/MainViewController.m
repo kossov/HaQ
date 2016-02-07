@@ -25,7 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // HIDE BACK BUTTON - COMMING FROM LOGINVIEWCONTROLLER
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
     
