@@ -23,23 +23,6 @@ static DataManager *dataManager = nil;
     return dataManager;
 }
 
-- (id)init {
-    if ((self = [super init])) {
-        // prepare data?
-    }
-    
-    return self;
-}
-
-+ (void)fetchData {
-    PFUser *user = [PFUser currentUser];
-    
-    if (!user) {
-        return;
-    }
-    
-}
-
 - (void)pushUserLocation:(CLLocation*)location {
     PFUser *user = [PFUser currentUser];
     PFGeoPoint *currentLocation = [PFGeoPoint geoPointWithLocation:location];

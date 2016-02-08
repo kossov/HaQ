@@ -26,6 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - 98,
+                                                                      self.view.bounds.size.height / 5,
+                                                                      200,
+                                                                      100)];
+    [logo setImage:[UIImage imageNamed:@"HaQ-logo"]];
+    logo.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:logo];
+    
     self.UsernameTextField.delegate = self;
     self.PasswordTextField.delegate = self;
     

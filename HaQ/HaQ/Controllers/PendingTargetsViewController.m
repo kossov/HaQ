@@ -90,11 +90,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"DecideForPendingTarget"]) {
-        
-        // Get destination view
         DecideForPendingTargetsViewController *toVC = [segue destinationViewController];
-        
-        // Pass the information to your destination view
         toVC.decideForPendingTarget = _selectedPendingTarget;
     }
 }

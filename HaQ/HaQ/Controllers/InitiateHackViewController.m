@@ -1,18 +1,18 @@
 //
-//  BeingHackedViewController.m
+//  InitiateHackViewController.m
 //  HaQ
 //
-//  Created by Ognyan Kossov on 2/5/16.
+//  Created by Ognyan Kossov on 2/7/16.
 //  Copyright © 2016 Ognyan Kossov. All rights reserved.
 //
 
-#import "BeingHackedViewController.h"
+#import "InitiateHackViewController.h"
 
-@interface BeingHackedViewController ()
+@interface InitiateHackViewController ()
 
 @end
 
-@implementation BeingHackedViewController
+@implementation InitiateHackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

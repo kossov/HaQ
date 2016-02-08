@@ -20,6 +20,7 @@
 #import "ModelConstants.h"
 #import "Item.h"
 #import "PictureCell.h"
+#import "LocationManager.h"
 
 @implementation CollectItemsViewController {
     NSMutableArray *_itemsForCurrentLocation;
@@ -33,8 +34,16 @@
                                                                                        target:self
                                                                                        action:@selector(getItemsForCurrentLocation)];
     self.navigationItem.rightBarButtonItem = refreshTargetsBtn;
-    
+    LocationManager *ref = [LocationManager getInstance];
     self.ItemsTableView.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [DataUpdateProtocol getInstance].delegate = self;
+}
+
+-(void)newDataFetched {
+    
 }
 
 - (IBAction)ShowMap:(id)sender {

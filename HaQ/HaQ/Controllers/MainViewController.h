@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataUpdateProtocol.h"
+#import "StatusItemView.h"
 
-@interface MainViewController : UIViewController <CLLocationManagerDelegate>
+@interface MainViewController : UIViewController <CLLocationManagerDelegate, DataUpdateProtocolDelegate>
 
 @property (nonatomic , strong) CLLocationManager *locationManager;
-@property (weak, nonatomic) IBOutlet UICollectionView *StatusBarGrid;
+
 - (IBAction)StartHackingButtonAction:(id)sender;
+
 - (IBAction)ShowTargetsButtonAction:(id)sender;
+
 - (IBAction)CollectItemsButtonAction:(id)sender;
 
 @end

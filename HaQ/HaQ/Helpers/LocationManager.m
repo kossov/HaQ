@@ -21,14 +21,6 @@ static LocationManager *locationManager = nil;
     return locationManager;
 }
 
-- (id)init {
-    if ((self = [super init])) {
-        // prepare data?
-    }
-    
-    return self;
-}
-
 - (void)startLocationServices {
     if (nil == self.locationManager)
         self.locationManager = [[CLLocationManager alloc] init];

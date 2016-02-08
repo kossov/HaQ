@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserDetailsView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opC-Si-GYH">
+                    <rect key="frame" x="8" y="133" width="584" height="459"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjr-oM-EPI">
+                    <rect key="frame" x="8" y="45" width="584" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="Ezu-tJ-STk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="45"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Zjr-oM-EPI" firstAttribute="leading" secondItem="opC-Si-GYH" secondAttribute="leading" id="Jzt-hF-VdC"/>
+                <constraint firstItem="opC-Si-GYH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dP9-jx-Z3c"/>
+                <constraint firstItem="Zjr-oM-EPI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dcw-Gf-XBr"/>
+                <constraint firstItem="Zjr-oM-EPI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="vm5-GU-nYI"/>
+                <constraint firstItem="opC-Si-GYH" firstAttribute="top" secondItem="Zjr-oM-EPI" secondAttribute="bottom" constant="8" symbolic="YES" id="y9r-G3-ys5"/>
+                <constraint firstItem="Zjr-oM-EPI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="zrS-J2-X2z"/>
+            </constraints>
+            <connections>
+                <outlet property="UserImageView" destination="opC-Si-GYH" id="pWP-6a-96n"/>
+                <outlet property="UsernameLabel" destination="Zjr-oM-EPI" id="6ti-Ar-6pY"/>
+            </connections>
+        </view>
+    </objects>
+</document>

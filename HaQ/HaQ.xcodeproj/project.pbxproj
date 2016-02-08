@@ -14,12 +14,14 @@
 		FC60EAE11C66E8C5006F2C21 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC60EAE01C66E8C5006F2C21 /* LocationManager.m */; };
 		FC6256591C6134D100FCAE56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6256581C6134D100FCAE56 /* main.m */; };
 		FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565B1C6134D100FCAE56 /* AppDelegate.m */; };
-		FC6256621C6134D200FCAE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6256601C6134D200FCAE56 /* Main.storyboard */; };
 		FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6256631C6134D200FCAE56 /* Assets.xcassets */; };
 		FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */; };
 		FC630A621C6716BE0060FF5D /* glow-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = FC630A641C6716BE0060FF5D /* glow-marker.png */; };
 		FC630A651C6716D20060FF5D /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = FC630A671C6716D20060FF5D /* icon_money.png */; };
 		FC630A6C1C67397A0060FF5D /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC630A6B1C67397A0060FF5D /* PictureCell.xib */; };
+		FC630A761C6760390060FF5D /* DataUpdateProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC630A751C6760390060FF5D /* DataUpdateProtocol.m */; };
+		FC68615D1C685E5C0008C818 /* InitiateHackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */; };
+		FC68615F1C68611A0008C818 /* HaQ-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC68615E1C68611A0008C818 /* HaQ-logo.png */; };
 		FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331401C636C1E00F616AC /* LoginViewController.m */; };
 		FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331431C636C2F00F616AC /* RegisterViewController.m */; };
 		FCA331481C636C8500F616AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331471C636C8500F616AC /* MainViewController.m */; };
@@ -28,7 +30,6 @@
 		FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EED1C64AA7600DA6EFA /* GlobalConstants.m */; };
 		FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */; };
 		FCD11EF41C64B97900DA6EFA /* Friendship.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF31C64B97900DA6EFA /* Friendship.m */; };
-		FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF61C64D1A100DA6EFA /* BeingHackedViewController.m */; };
 		FCD11EFA1C64D1BD00DA6EFA /* HackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EF91C64D1BD00DA6EFA /* HackViewController.m */; };
 		FCD11EFD1C64D1D000DA6EFA /* TargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EFC1C64D1D000DA6EFA /* TargetsViewController.m */; };
 		FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11EFF1C64D1E200DA6EFA /* CollectItemsViewController.m */; };
@@ -37,6 +38,15 @@
 		FCD11F0C1C64E81500DA6EFA /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F0B1C64E81500DA6EFA /* GoogleMapViewController.m */; };
 		FCD11F161C652A3600DA6EFA /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F151C652A3600DA6EFA /* PictureCell.m */; };
 		FCD11F201C65762300DA6EFA /* PendingTargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */; };
+		FCD33AED1C67E67F00F2465A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD33AEC1C67E67E00F2465A /* Main.storyboard */; };
+		FCD33AF51C67EFAB00F2465A /* UserDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33AF41C67EFAB00F2465A /* UserDetailsView.m */; };
+		FCD33AF71C67EFBD00F2465A /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD33AF61C67EFBD00F2465A /* UserDetailsView.xib */; };
+		FCD33AFA1C67FC0F00F2465A /* ChooseTargetToHackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33AF91C67FC0F00F2465A /* ChooseTargetToHackViewController.m */; };
+		FCD33B011C68006C00F2465A /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33B001C68006C00F2465A /* StatusItemView.m */; };
+		FCD33B0E1C681B2B00F2465A /* status_money_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD33B0C1C681B2700F2465A /* status_money_bag.png */; };
+		FCD33B161C68264300F2465A /* BackgroundAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33B151C68264300F2465A /* BackgroundAnimation.m */; };
+		FCD33B241C683AF800F2465A /* animation_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD33B231C683AF800F2465A /* animation_1.png */; };
+		FCD33B261C683B0300F2465A /* animation_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD33B251C683B0300F2465A /* animation_2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +65,6 @@
 		FC6256581C6134D100FCAE56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC62565A1C6134D100FCAE56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC62565B1C6134D100FCAE56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FC6256611C6134D200FCAE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC6256631C6134D200FCAE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6256661C6134D200FCAE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6256681C6134D200FCAE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +73,11 @@
 		FC630A681C6716D50060FF5D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/icon_money.png; sourceTree = "<group>"; };
 		FC630A691C6716DA0060FF5D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/glow-marker.png"; sourceTree = "<group>"; };
 		FC630A6B1C67397A0060FF5D /* PictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PictureCell.xib; path = Views/PictureCell.xib; sourceTree = "<group>"; };
+		FC630A741C6760390060FF5D /* DataUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataUpdateProtocol.h; path = Helpers/DataUpdateProtocol.h; sourceTree = "<group>"; };
+		FC630A751C6760390060FF5D /* DataUpdateProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataUpdateProtocol.m; path = Helpers/DataUpdateProtocol.m; sourceTree = "<group>"; };
+		FC68615B1C685E5C0008C818 /* InitiateHackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitiateHackViewController.h; path = Controllers/InitiateHackViewController.h; sourceTree = "<group>"; };
+		FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitiateHackViewController.m; path = Controllers/InitiateHackViewController.m; sourceTree = "<group>"; };
+		FC68615E1C68611A0008C818 /* HaQ-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HaQ-logo.png"; path = "Resources/HaQ-logo.png"; sourceTree = "<group>"; };
 		FCA3313F1C636C1E00F616AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		FCA331401C636C1E00F616AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		FCA331421C636C2F00F616AC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controllers/RegisterViewController.h; sourceTree = "<group>"; };
@@ -80,8 +94,6 @@
 		FCD11EF01C64AA8400DA6EFA /* ModelConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelConstants.m; path = Constants/ModelConstants.m; sourceTree = "<group>"; };
 		FCD11EF21C64B97900DA6EFA /* Friendship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friendship.h; path = Models/Friendship.h; sourceTree = "<group>"; };
 		FCD11EF31C64B97900DA6EFA /* Friendship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friendship.m; path = Models/Friendship.m; sourceTree = "<group>"; };
-		FCD11EF51C64D1A100DA6EFA /* BeingHackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeingHackedViewController.h; path = Controllers/BeingHackedViewController.h; sourceTree = "<group>"; };
-		FCD11EF61C64D1A100DA6EFA /* BeingHackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeingHackedViewController.m; path = Controllers/BeingHackedViewController.m; sourceTree = "<group>"; };
 		FCD11EF81C64D1BD00DA6EFA /* HackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackViewController.h; path = Controllers/HackViewController.h; sourceTree = "<group>"; };
 		FCD11EF91C64D1BD00DA6EFA /* HackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackViewController.m; path = Controllers/HackViewController.m; sourceTree = "<group>"; };
 		FCD11EFB1C64D1D000DA6EFA /* TargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetsViewController.h; path = Controllers/TargetsViewController.h; sourceTree = "<group>"; };
@@ -98,6 +110,20 @@
 		FCD11F151C652A3600DA6EFA /* PictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureCell.m; path = Views/PictureCell.m; sourceTree = "<group>"; };
 		FCD11F1E1C65762300DA6EFA /* PendingTargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PendingTargetsViewController.h; path = Controllers/PendingTargetsViewController.h; sourceTree = "<group>"; };
 		FCD11F1F1C65762300DA6EFA /* PendingTargetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PendingTargetsViewController.m; path = Controllers/PendingTargetsViewController.m; sourceTree = "<group>"; };
+		FCD33AEC1C67E67E00F2465A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FCD33AF31C67EFAB00F2465A /* UserDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailsView.h; path = Views/UserDetailsView.h; sourceTree = "<group>"; };
+		FCD33AF41C67EFAB00F2465A /* UserDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailsView.m; path = Views/UserDetailsView.m; sourceTree = "<group>"; };
+		FCD33AF61C67EFBD00F2465A /* UserDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserDetailsView.xib; path = Views/UserDetailsView.xib; sourceTree = "<group>"; };
+		FCD33AF81C67FC0F00F2465A /* ChooseTargetToHackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseTargetToHackViewController.h; path = Controllers/ChooseTargetToHackViewController.h; sourceTree = "<group>"; };
+		FCD33AF91C67FC0F00F2465A /* ChooseTargetToHackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseTargetToHackViewController.m; path = Controllers/ChooseTargetToHackViewController.m; sourceTree = "<group>"; };
+		FCD33AFF1C68006C00F2465A /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusItemView.h; path = Views/StatusItemView.h; sourceTree = "<group>"; };
+		FCD33B001C68006C00F2465A /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusItemView.m; path = Views/StatusItemView.m; sourceTree = "<group>"; };
+		FCD33B0B1C681B2700F2465A /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/status_money_bag.png; sourceTree = "<group>"; };
+		FCD33B0D1C681B2900F2465A /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/status_money_bag.png; sourceTree = "<group>"; };
+		FCD33B141C68264300F2465A /* BackgroundAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundAnimation.h; path = Views/BackgroundAnimation.h; sourceTree = "<group>"; };
+		FCD33B151C68264300F2465A /* BackgroundAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundAnimation.m; path = Views/BackgroundAnimation.m; sourceTree = "<group>"; };
+		FCD33B231C683AF800F2465A /* animation_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animation_1.png; path = Resources/animation_1.png; sourceTree = "<group>"; };
+		FCD33B251C683B0300F2465A /* animation_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animation_2.png; path = Resources/animation_2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +179,8 @@
 				FCD11F051C64DD7900DA6EFA /* DataManager.m */,
 				FC60EADF1C66E8C5006F2C21 /* LocationManager.h */,
 				FC60EAE01C66E8C5006F2C21 /* LocationManager.m */,
+				FC630A741C6760390060FF5D /* DataUpdateProtocol.h */,
+				FC630A751C6760390060FF5D /* DataUpdateProtocol.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -178,6 +206,7 @@
 		FC6256561C6134D100FCAE56 /* HaQ */ = {
 			isa = PBXGroup;
 			children = (
+				FCD33AEC1C67E67E00F2465A /* Main.storyboard */,
 				FCD11F0F1C651CFC00DA6EFA /* Views */,
 				FCD11F0E1C64EEB300DA6EFA /* Resources */,
 				FCD11EEB1C64AA3E00DA6EFA /* Constants */,
@@ -186,7 +215,6 @@
 				FC56F1171C6165B100E7DA32 /* Models */,
 				FC62565A1C6134D100FCAE56 /* AppDelegate.h */,
 				FC62565B1C6134D100FCAE56 /* AppDelegate.m */,
-				FC6256601C6134D200FCAE56 /* Main.storyboard */,
 				FC6256631C6134D200FCAE56 /* Assets.xcassets */,
 				FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */,
 				FC6256681C6134D200FCAE56 /* Info.plist */,
@@ -212,8 +240,6 @@
 				FCA331431C636C2F00F616AC /* RegisterViewController.m */,
 				FCA331461C636C8500F616AC /* MainViewController.h */,
 				FCA331471C636C8500F616AC /* MainViewController.m */,
-				FCD11EF51C64D1A100DA6EFA /* BeingHackedViewController.h */,
-				FCD11EF61C64D1A100DA6EFA /* BeingHackedViewController.m */,
 				FCD11EF81C64D1BD00DA6EFA /* HackViewController.h */,
 				FCD11EF91C64D1BD00DA6EFA /* HackViewController.m */,
 				FCD11EFB1C64D1D000DA6EFA /* TargetsViewController.h */,
@@ -228,6 +254,10 @@
 				FCD11F1E1C65762300DA6EFA /* PendingTargetsViewController.h */,
 				FC13BB8A1C66809C002AA905 /* DecideForPendingTargetsViewController.h */,
 				FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */,
+				FCD33AF81C67FC0F00F2465A /* ChooseTargetToHackViewController.h */,
+				FCD33AF91C67FC0F00F2465A /* ChooseTargetToHackViewController.m */,
+				FC68615B1C685E5C0008C818 /* InitiateHackViewController.h */,
+				FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +276,10 @@
 		FCD11F0E1C64EEB300DA6EFA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FC68615E1C68611A0008C818 /* HaQ-logo.png */,
+				FCD33B251C683B0300F2465A /* animation_2.png */,
+				FCD33B231C683AF800F2465A /* animation_1.png */,
+				FCD33B0C1C681B2700F2465A /* status_money_bag.png */,
 				FC630A671C6716D20060FF5D /* icon_money.png */,
 				FC630A641C6716BE0060FF5D /* glow-marker.png */,
 			);
@@ -258,6 +292,13 @@
 				FCD11F141C652A3600DA6EFA /* PictureCell.h */,
 				FCD11F151C652A3600DA6EFA /* PictureCell.m */,
 				FC630A6B1C67397A0060FF5D /* PictureCell.xib */,
+				FCD33AF31C67EFAB00F2465A /* UserDetailsView.h */,
+				FCD33AF41C67EFAB00F2465A /* UserDetailsView.m */,
+				FCD33AF61C67EFBD00F2465A /* UserDetailsView.xib */,
+				FCD33AFF1C68006C00F2465A /* StatusItemView.h */,
+				FCD33B001C68006C00F2465A /* StatusItemView.m */,
+				FCD33B141C68264300F2465A /* BackgroundAnimation.h */,
+				FCD33B151C68264300F2465A /* BackgroundAnimation.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -329,10 +370,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */,
+				FCD33B261C683B0300F2465A /* animation_2.png in Resources */,
+				FCD33B241C683AF800F2465A /* animation_1.png in Resources */,
 				FC630A651C6716D20060FF5D /* icon_money.png in Resources */,
 				FC630A6C1C67397A0060FF5D /* PictureCell.xib in Resources */,
+				FCD33B0E1C681B2B00F2465A /* status_money_bag.png in Resources */,
+				FC68615F1C68611A0008C818 /* HaQ-logo.png in Resources */,
+				FCD33AF71C67EFBD00F2465A /* UserDetailsView.xib in Resources */,
+				FCD33AED1C67E67F00F2465A /* Main.storyboard in Resources */,
 				FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */,
-				FC6256621C6134D200FCAE56 /* Main.storyboard in Resources */,
 				FC630A621C6716BE0060FF5D /* glow-marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,11 +446,15 @@
 				FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */,
 				FCD11F0C1C64E81500DA6EFA /* GoogleMapViewController.m in Sources */,
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
+				FCD33B161C68264300F2465A /* BackgroundAnimation.m in Sources */,
 				FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */,
+				FCD33AFA1C67FC0F00F2465A /* ChooseTargetToHackViewController.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
+				FC630A761C6760390060FF5D /* DataUpdateProtocol.m in Sources */,
 				FCA331481C636C8500F616AC /* MainViewController.m in Sources */,
 				FCD11EF41C64B97900DA6EFA /* Friendship.m in Sources */,
 				FCD11F201C65762300DA6EFA /* PendingTargetsViewController.m in Sources */,
+				FC68615D1C685E5C0008C818 /* InitiateHackViewController.m in Sources */,
 				FCD11EFD1C64D1D000DA6EFA /* TargetsViewController.m in Sources */,
 				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
 				FCD11F161C652A3600DA6EFA /* PictureCell.m in Sources */,
@@ -413,7 +463,8 @@
 				FCD11F061C64DD7900DA6EFA /* DataManager.m in Sources */,
 				FC60EAE11C66E8C5006F2C21 /* LocationManager.m in Sources */,
 				FC13BB8C1C66809C002AA905 /* DecideForPendingTargetsViewController.m in Sources */,
-				FCD11EF71C64D1A100DA6EFA /* BeingHackedViewController.m in Sources */,
+				FCD33B011C68006C00F2465A /* StatusItemView.m in Sources */,
+				FCD33AF51C67EFAB00F2465A /* UserDetailsView.m in Sources */,
 				FCD11F001C64D1E200DA6EFA /* CollectItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,14 +472,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FC6256601C6134D200FCAE56 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC6256611C6134D200FCAE56 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -454,6 +497,16 @@
 				FC630A681C6716D50060FF5D /* en */,
 			);
 			name = icon_money.png;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FCD33B0C1C681B2700F2465A /* status_money_bag.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCD33B0B1C681B2700F2465A /* Base */,
+				FCD33B0D1C681B2900F2465A /* en */,
+			);
+			name = status_money_bag.png;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -545,10 +598,13 @@
 			baseConfigurationReference = E2835DEEC783EE3201BBD73D /* Pods-HaQ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HaQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kossov.HaQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HaQ/HaQ-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -557,10 +613,12 @@
 			baseConfigurationReference = A5237C04DDC5F1219AA4EA24 /* Pods-HaQ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HaQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kossov.HaQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HaQ/HaQ-Bridging-Header.h";
 			};
 			name = Release;
 		};

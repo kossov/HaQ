@@ -19,8 +19,6 @@
 
 + (DataManager*)getInstance;
 
-+ (void)fetchData;
-
 - (void)pushUserLocation:(CLLocation*)location;
 
 @end

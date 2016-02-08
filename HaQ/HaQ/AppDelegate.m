@@ -12,6 +12,7 @@
 #import "DataManager.h"
 #import "Friendship.h"
 #import "Item.h"
+#import "DataUpdateProtocol.h"
 
 @interface AppDelegate ()
 
@@ -51,8 +52,8 @@
 //        bgTask = UIBackgroundTaskInvalid;
 //    }];
 //    
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:15
-//                                                      target:[DataManager class]
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
+//                                                      target:[DataUpdateProtocol getInstance]
 //                                                    selector:@selector(fetchData)
 //                                                    userInfo:nil
 //                                                     repeats:YES];

@@ -10,4 +10,8 @@
 
 @interface HackViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *UsernameLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *ImageView;
+
 @end
