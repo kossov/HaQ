@@ -8,28 +8,40 @@
 
 #import <Parse/Parse.h>
 #import "DataUpdateProtocol.h"
+#import "DataManager.h"
 
-@implementation DataUpdateProtocol
+@implementation FetchDataProtocol
 
-static DataUpdateProtocol *dataProtocol = nil;
+static FetchDataProtocol *dataProtocol = nil;
 
-+(DataUpdateProtocol*)getInstance {
++(FetchDataProtocol*)getInstance {
     if (dataProtocol == nil) {
-        dataProtocol = [[DataUpdateProtocol alloc] init];
+        dataProtocol = [[FetchDataProtocol alloc] init];
     }
     
     return dataProtocol;
 }
 
--(void)fetchData{
+-(void)checkForAttack{
     PFUser *user = [PFUser currentUser];
     
     if (!user) {
         return;
     }
     
-    
-    [self.delegate newDataFetched];
+    PFQuery *query = [PFQuery queryWithClassName:@"Attack"];
+    [query whereKey:@"hasEnded" equalTo:@NO];
+    [query whereKey:@"toUser" equalTo:[PFUser currentUser].username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects.count > 0) {
+            if (self.isHandled) {
+                return;
+            }
+            
+            [DataManager getInstance].hackAttack = objects[0];
+            [self.delegate hackAttack];
+        }
+    }];
 }
 
 @end

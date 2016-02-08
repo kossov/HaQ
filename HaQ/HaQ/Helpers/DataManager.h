@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Attack.h"
 
 @interface DataManager : NSObject
 
+@property Attack *hackAttack;
 @property PFGeoPoint *currentPosition;
 @property NSMutableArray *items;
 @property NSMutableArray *targetPositions;

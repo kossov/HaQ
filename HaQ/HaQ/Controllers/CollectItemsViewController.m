@@ -34,15 +34,14 @@
                                                                                        target:self
                                                                                        action:@selector(getItemsForCurrentLocation)];
     self.navigationItem.rightBarButtonItem = refreshTargetsBtn;
-    LocationManager *ref = [LocationManager getInstance];
     self.ItemsTableView.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [DataUpdateProtocol getInstance].delegate = self;
+    [FetchDataProtocol getInstance].delegate = self;
 }
 
--(void)newDataFetched {
+-(void)hackAttack {
     
 }
 

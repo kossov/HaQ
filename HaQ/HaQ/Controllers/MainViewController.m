@@ -18,7 +18,7 @@
 #import "GoogleMapViewController.h"
 #import "StatusItemView.h"
 #import "BackgroundAnimation.h"
-
+#import "BeingHackedViewController.h"
 @interface MainViewController ()
 
 @end
@@ -48,6 +48,10 @@
                                                           80, 50)
                                        andView:self.view];
     [[LocationManager getInstance] startLocationServices];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
 }
 
 - (void)addStatusItemView {
@@ -99,7 +103,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [DataUpdateProtocol getInstance].delegate = self;
+    [FetchDataProtocol getInstance].delegate = self;
     
     for (UIView *subView in self.view.subviews)
     {
@@ -113,8 +117,9 @@
 }
 
 
--(void)newDataFetched {
-    
+-(void)hackAttack {
+    [FetchDataProtocol getInstance].isHandled = YES;
+    [self performSegueWithIdentifier:@"BeingHacked" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

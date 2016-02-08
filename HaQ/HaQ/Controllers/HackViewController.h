@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HackViewController : UIViewController
+@interface HackViewController : UIViewController <UIGestureRecognizerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *UsernameLabel;
-
-@property (weak, nonatomic) IBOutlet UIImageView *ImageView;
+@property (weak, nonatomic) IBOutlet UIButton *HackButton;
+@property (weak, nonatomic) IBOutlet UITextView *HackText;
 
 @end

@@ -39,10 +39,10 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [DataUpdateProtocol getInstance].delegate = self;
+    [FetchDataProtocol getInstance].delegate = self;
 }
 
-- (void)newDataFetched {
+- (void)hackAttack {
     
 }
 

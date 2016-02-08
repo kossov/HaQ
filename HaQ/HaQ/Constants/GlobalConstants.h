@@ -40,4 +40,9 @@ extern NSString *const ItemSuccessfullyClaimedMessageDescription;
 extern NSString *const UserIsBusyOrNotAccesableMessageTitle;
 extern NSString *const UserIsBusyOrNotAccesableMessageDescription;
 
+extern NSString *const AttackerGuessedSuccessfullyMessageTitle;
+extern NSString *const AttackerGuessedSuccessfullyMessageDescription;
+extern NSString *const AttackerGuessedNotSuccessfullyMessageTitle;
+extern NSString *const AttackerGuessedNotSuccessfullyMessageDescription;
+
 @end

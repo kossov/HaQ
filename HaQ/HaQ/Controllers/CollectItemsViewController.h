@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataUpdateProtocol.h"
 
-@interface CollectItemsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, DataUpdateProtocolDelegate>
+@interface CollectItemsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, FetchDataProtocolDelegate>
 
 - (IBAction)ShowMap:(id)sender;
 

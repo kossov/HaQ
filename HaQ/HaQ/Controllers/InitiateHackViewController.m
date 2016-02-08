@@ -34,7 +34,6 @@
     
     CGRect rect = CGRectMake(self.view.bounds.size.width / 2 - 75, 8 * (self.view.bounds.size.height / 12) + 30, 150, 150);
     DoubleCircleButton *btn = [[DoubleCircleButton alloc] initWithFrame:rect];
-    
     UILongPressGestureRecognizer *handler = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleHoldGesture:)];
     handler.minimumPressDuration = 0.3;
     handler.delegate = self;
@@ -138,9 +137,7 @@
 }
 
 -(void)loadHackScreen {
-    HackViewController *toVC = [[HackViewController alloc] init];
-    //toVC.mustShowItems = YES;
-    [self.navigationController pushViewController:toVC animated:YES];
+    [self performSegueWithIdentifier:@"StartHacking" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

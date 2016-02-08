@@ -46,25 +46,25 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-//    application = [UIApplication sharedApplication];
-//    
-//    //create new uiBackgroundTask
-//    __block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
-//        [application endBackgroundTask:bgTask];
-//        bgTask = UIBackgroundTaskInvalid;
-//    }];
-//    
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
-//                                                      target:[DataUpdateProtocol getInstance]
-//                                                    selector:@selector(fetchData)
-//                                                    userInfo:nil
-//                                                     repeats:YES];
-//    //and create new timer with async call:
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        //run function methodRunAfterBackground
-//        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-//        [[NSRunLoop currentRunLoop] run];
-//    });
+    application = [UIApplication sharedApplication];
+    
+    //create new uiBackgroundTask
+    __block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
+                                                      target:[FetchDataProtocol getInstance]
+                                                    selector:@selector(checkForAttack)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    //and create new timer with async call:
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //run function methodRunAfterBackground
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+    });
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

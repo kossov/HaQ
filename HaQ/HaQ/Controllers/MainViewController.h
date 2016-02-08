@@ -10,7 +10,7 @@
 #import "DataUpdateProtocol.h"
 #import "StatusItemView.h"
 
-@interface MainViewController : UIViewController <CLLocationManagerDelegate, DataUpdateProtocolDelegate>
+@interface MainViewController : UIViewController <CLLocationManagerDelegate, FetchDataProtocolDelegate>
 
 @property (nonatomic , strong) CLLocationManager *locationManager;
 

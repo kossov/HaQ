@@ -40,4 +40,9 @@ NSString *const ItemSuccessfullyClaimedMessageDescription = @"#MUSTBENICE";
 NSString *const UserIsBusyOrNotAccesableMessageTitle = @"Sorry..";
 NSString *const UserIsBusyOrNotAccesableMessageDescription = @"Can't be Hacked right now..(others might hack him also)";
 
+NSString *const AttackerGuessedSuccessfullyMessageTitle = @"Noice!";
+NSString *const AttackerGuessedSuccessfullyMessageDescription = @"You guessed successfully! You Receive a Money Bag!";
+NSString *const AttackerGuessedNotSuccessfullyMessageTitle = @"Sorry..";
+NSString *const AttackerGuessedNotSuccessfullyMessageDescription = @"They hacked you..";
+
 @end
