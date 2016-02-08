@@ -13,12 +13,13 @@
 #import "Item.h"
 #import "HelperMethods.h"
 #import "GlobalConstants.h"
+#import "Attack.h"
 
 @implementation GoogleMapViewController {
     GMSMapView *_mapView;
     PFGeoPoint *_currentUserPosition;
     NSArray *_currentItems;
-    NSArray *_currentTargets;
+    NSMutableArray *_currentTargets;
 }
 
 - (void)viewDidLoad {
@@ -27,7 +28,7 @@
                                                                                        target:self
                                                                                        action:@selector(updateMap)];
     self.navigationItem.rightBarButtonItem = refreshTargetsBtn;
-
+    
     _currentUserPosition = [DataManager getInstance].currentPosition;
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:_currentUserPosition.latitude
                                                             longitude:_currentUserPosition.longitude
@@ -62,9 +63,9 @@
         }
     } else {
         for (int i = 0; i<_currentTargets.count; i++) {
-            PFGeoPoint *currentTarget = (PFGeoPoint*)[_currentTargets objectAtIndex:i];
-            double longitude = currentTarget.longitude;
-            double latitude = currentTarget.latitude;
+            PFUser *currentTarget = (PFUser*)[_currentTargets objectAtIndex:i];
+            double longitude = ((PFGeoPoint*)currentTarget[@"location"]).longitude;
+            double latitude = ((PFGeoPoint*)currentTarget[@"location"]).latitude;
             
             GMSMarker *targetMarker = [[GMSMarker alloc] init];
             targetMarker.title = @"Unknown Hacker!";
@@ -83,22 +84,67 @@
 
 - (void)updateMapData {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSDate *todaysDate = [HelperMethods getEarliestTodaysDate];
-    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-    [query whereKey:@"createdAt" greaterThan:todaysDate];
-    [query whereKey:@"isTaken" equalTo:@NO];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if (error) {
-            NSString *errorString = [HelperMethods getStringFromError:error];
-            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-            [self presentViewController:alert animated:YES completion:nil];
-            return;
-        }
-        
-        _currentItems = [NSArray arrayWithArray:objects];
-        [self addMarkers];
-    }];
+    
+    if (self.mustShowItems) {
+        NSDate *todaysDate = [HelperMethods getEarliestTodaysDate];
+        PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+        [query whereKey:@"createdAt" greaterThan:todaysDate];
+        [query whereKey:@"isTaken" equalTo:@NO];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if (error) {
+                NSString *errorString = [HelperMethods getStringFromError:error];
+                UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+            
+            _currentItems = [NSArray arrayWithArray:objects];
+            [self addMarkers];
+        }];
+    } else {
+        PFGeoPoint *currentLocation = [DataManager getInstance].currentPosition;
+        PFQuery *query = [PFUser query];
+        [query whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
+        [query whereKey:@"isOnline" equalTo:@YES];
+        [query whereKey:@"location" nearGeoPoint:currentLocation withinKilometers:0.1];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable users, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if (error) {
+                NSString *errorString = [HelperMethods getStringFromError:error];
+                UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            _currentTargets = [NSMutableArray arrayWithArray:users];
+            PFQuery *queryUsersNotPlaying = [PFQuery queryWithClassName:@"Attack"];
+            [queryUsersNotPlaying whereKey:@"hasEnded" equalTo:@NO];
+            [queryUsersNotPlaying findObjectsInBackgroundWithBlock:^(NSArray * _Nullable attacks, NSError * _Nullable error2) {
+                if (error2) {
+                    NSString *errorString = [HelperMethods getStringFromError:error2];
+                    UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    return;
+                }
+                
+                for (int i = 0; i < users.count; i++) {
+                    PFUser *currentUser = users[i];
+                    for (int j = 0; j < attacks.count; j++) {
+                        Attack *currentAttack = attacks[i];
+                        if (currentUser.username == currentAttack.byUser ||
+                            currentUser.username == currentAttack.toUser) {
+                            [_currentTargets removeObject:currentUser];
+                        }
+                    }
+                }
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [self addMarkers];
+            }];
+        }];
+    }
 }
 
 @end

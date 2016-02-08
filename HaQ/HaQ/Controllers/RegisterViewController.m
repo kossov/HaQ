@@ -11,6 +11,7 @@
 #import "RegisterViewController.h"
 #import "HelperMethods.h"
 #import "GlobalConstants.h"
+#import "ModelConstants.h"
 
 @interface RegisterViewController ()
 
@@ -65,8 +66,8 @@
                                             {
                                                 [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
                                             }];
-            _user[@"moneyBags"] = @3;
-            [_user saveInBackground];
+            
+            [self addCustomFieldsToUser];
             [_alert addAction:alertOkButton];
             [self presentViewController:_alert animated:YES completion:nil];
         } else {
@@ -75,6 +76,13 @@
             [self presentViewController:_alert animated:YES completion:nil];
         }
     }];
+}
+
+- (void)addCustomFieldsToUser {
+    _user[@"moneyBags"] = @3;
+    _user[@"isOnline"] = @NO;
+    
+    [_user saveInBackground];
 }
 
 -(BOOL) textFieldShouldReturn: (UITextField *) textField {

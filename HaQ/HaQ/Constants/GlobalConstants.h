@@ -18,6 +18,8 @@ extern NSInteger const PasswordMaxLength;
 
 extern NSInteger const ItemsPerDay;
 
+extern NSInteger const InitiateAttackCountInSeconds;
+
 extern NSString *const InvalidUsernameMessage;
 extern NSString *const InvalidPasswordMessage;
 extern NSString *const InvalidConfirmPasswordMessage;
@@ -35,5 +37,7 @@ extern NSString *const ItemAlreadyClaimedMessageTitle;
 extern NSString *const ItemAlreadyClaimedMessageDescription;
 extern NSString *const ItemSuccessfullyClaimedMessageTitle;
 extern NSString *const ItemSuccessfullyClaimedMessageDescription;
+extern NSString *const UserIsBusyOrNotAccesableMessageTitle;
+extern NSString *const UserIsBusyOrNotAccesableMessageDescription;
 
 @end

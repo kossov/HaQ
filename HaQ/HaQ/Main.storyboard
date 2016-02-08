@@ -247,6 +247,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WrI-1t-xWA">
+                                <rect key="frame" x="20" y="28" width="560" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGJ-3l-KZr">
                                 <rect key="frame" x="20" y="550" width="560" height="42"/>
                                 <constraints>
@@ -258,10 +262,6 @@
                                     <action selector="ShowMap:" destination="Ndl-NX-zac" eventType="touchUpInside" id="h2S-Yu-8Bu"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WrI-1t-xWA">
-                                <rect key="frame" x="20" y="28" width="560" height="514"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -522,10 +522,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ik5-n2-VRs">
-                                <rect key="frame" x="109" y="101" width="382" height="230"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wui-af-GbP">
+                                <rect key="frame" x="63" y="109" width="475" height="275"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0C-91-hzu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0C-91-hzu">
                                 <rect key="frame" x="20" y="28" width="560" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="lJq-4F-3XN"/>
@@ -537,24 +537,26 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ik5-n2-VRs" firstAttribute="centerX" secondItem="QLL-Va-RD8" secondAttribute="centerX" id="A2w-h8-Ncb"/>
+                            <constraint firstItem="wui-af-GbP" firstAttribute="centerX" secondItem="QLL-Va-RD8" secondAttribute="centerX" id="5TI-Z7-1eU"/>
                             <constraint firstItem="f0C-91-hzu" firstAttribute="centerX" secondItem="QLL-Va-RD8" secondAttribute="centerX" id="JU9-gN-Rta"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ik5-n2-VRs" secondAttribute="trailing" constant="89" id="bQm-qs-7R4"/>
+                            <constraint firstItem="f0C-91-hzu" firstAttribute="leading" secondItem="QLL-Va-RD8" secondAttribute="leadingMargin" id="L71-vR-XqA"/>
+                            <constraint firstItem="f0C-91-hzu" firstAttribute="top" secondItem="i35-4e-4gb" secondAttribute="bottom" constant="8" symbolic="YES" id="VCR-BD-plZ"/>
+                            <constraint firstItem="wui-af-GbP" firstAttribute="top" secondItem="f0C-91-hzu" secondAttribute="bottom" constant="8" symbolic="YES" id="ZUQ-qJ-vza"/>
+                            <constraint firstItem="f0C-91-hzu" firstAttribute="centerX" secondItem="wui-af-GbP" secondAttribute="centerX" id="aYg-d8-jU4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ImageView" destination="Ik5-n2-VRs" id="jxr-Pe-4pd"/>
-                        <outlet property="UsernameLabel" destination="f0C-91-hzu" id="g6F-Br-5L5"/>
+                        <outlet property="UsernameLabel" destination="f0C-91-hzu" id="WTN-Qp-h28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3Z-UA-1KN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050" y="1623"/>
         </scene>
-        <!--Hackable Targets-->
+        <!--Hack Target-->
         <scene sceneID="fai-Qv-OEN">
             <objects>
-                <viewController title="Hackable Targets" id="5w0-KZ-vbL" customClass="ChooseTargetToHackViewController" sceneMemberID="viewController">
+                <viewController title="Hack Target" id="5w0-KZ-vbL" customClass="ChooseTargetToHackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fBe-0n-Wcq"/>
                         <viewControllerLayoutGuide type="bottom" id="A9T-CS-dqQ"/>
@@ -563,33 +565,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jQa-ba-RNU">
-                                <rect key="frame" x="20" y="64" width="560" height="516"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jQa-ba-RNU">
+                                <rect key="frame" x="20" y="28" width="560" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Target to Hack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZV-T6-jTI">
-                                <rect key="frame" x="20" y="28" width="560" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-0k-de5">
+                                <rect key="frame" x="20" y="550" width="560" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="PzS-is-Owr"/>
+                                    <constraint firstAttribute="height" constant="42" id="ed3-JN-Xz6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="Show Map"/>
+                                <connections>
+                                    <action selector="ShowMapButtonAction:" destination="5w0-KZ-vbL" eventType="touchUpInside" id="jH6-Yc-tfl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tZV-T6-jTI" firstAttribute="top" secondItem="fBe-0n-Wcq" secondAttribute="bottom" constant="8" symbolic="YES" id="0Xj-py-vul"/>
-                            <constraint firstAttribute="bottom" secondItem="jQa-ba-RNU" secondAttribute="bottom" constant="20" symbolic="YES" id="1Ev-cD-bAZ"/>
-                            <constraint firstItem="jQa-ba-RNU" firstAttribute="centerX" secondItem="WAp-qp-Mn4" secondAttribute="centerX" id="VoH-II-VWS"/>
-                            <constraint firstItem="tZV-T6-jTI" firstAttribute="centerX" secondItem="WAp-qp-Mn4" secondAttribute="centerX" id="WGV-Cy-1UC"/>
-                            <constraint firstItem="jQa-ba-RNU" firstAttribute="top" secondItem="tZV-T6-jTI" secondAttribute="bottom" constant="8" symbolic="YES" id="lTO-17-Jkq"/>
-                            <constraint firstItem="tZV-T6-jTI" firstAttribute="leading" secondItem="jQa-ba-RNU" secondAttribute="leading" id="tR7-Yb-v17"/>
-                            <constraint firstItem="jQa-ba-RNU" firstAttribute="leading" secondItem="WAp-qp-Mn4" secondAttribute="leadingMargin" id="tgQ-ps-WSQ"/>
+                            <constraint firstItem="yc0-0k-de5" firstAttribute="trailing" secondItem="jQa-ba-RNU" secondAttribute="trailing" id="GER-4U-R0P"/>
+                            <constraint firstItem="yc0-0k-de5" firstAttribute="top" secondItem="jQa-ba-RNU" secondAttribute="bottom" constant="8" id="U3h-FD-mEI"/>
+                            <constraint firstItem="yc0-0k-de5" firstAttribute="leading" secondItem="jQa-ba-RNU" secondAttribute="leading" id="lVZ-yG-10W"/>
+                            <constraint firstItem="A9T-CS-dqQ" firstAttribute="top" secondItem="yc0-0k-de5" secondAttribute="bottom" constant="8" symbolic="YES" id="n38-kI-dF3"/>
+                            <constraint firstItem="yc0-0k-de5" firstAttribute="top" secondItem="jQa-ba-RNU" secondAttribute="bottom" constant="8" symbolic="YES" id="sp8-ru-ZNe"/>
+                            <constraint firstItem="yc0-0k-de5" firstAttribute="leading" secondItem="WAp-qp-Mn4" secondAttribute="leadingMargin" id="yZL-pp-yYl"/>
+                            <constraint firstItem="yc0-0k-de5" firstAttribute="centerX" secondItem="WAp-qp-Mn4" secondAttribute="centerX" id="zTX-Dl-Dlk"/>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="UJo-Bl-zob" kind="show" identifier="InitiateHackAttack" id="Peo-QT-DvH"/>
+                        <outlet property="HackTargetsTableView" destination="jQa-ba-RNU" id="Wpr-Bd-Ajl"/>
+                        <segue destination="UJo-Bl-zob" kind="show" identifier="InitiateHackAttack" id="yht-Me-X2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgu-Kw-QZs" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -22,6 +22,10 @@
 		FC630A761C6760390060FF5D /* DataUpdateProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC630A751C6760390060FF5D /* DataUpdateProtocol.m */; };
 		FC68615D1C685E5C0008C818 /* InitiateHackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */; };
 		FC68615F1C68611A0008C818 /* HaQ-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC68615E1C68611A0008C818 /* HaQ-logo.png */; };
+		FC68616E1C688A110008C818 /* DoubleCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68616D1C688A110008C818 /* DoubleCircleButton.swift */; };
+		FC6861711C68C12D0008C818 /* Attack.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6861701C68C12D0008C818 /* Attack.m */; };
+		FC6861741C68C3FF0008C818 /* BeingAttackedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6861731C68C3FF0008C818 /* BeingAttackedView.m */; };
+		FC6861761C68C4130008C818 /* BeingAttackedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6861751C68C4130008C818 /* BeingAttackedView.xib */; };
 		FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331401C636C1E00F616AC /* LoginViewController.m */; };
 		FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331431C636C2F00F616AC /* RegisterViewController.m */; };
 		FCA331481C636C8500F616AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331471C636C8500F616AC /* MainViewController.m */; };
@@ -78,6 +82,13 @@
 		FC68615B1C685E5C0008C818 /* InitiateHackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitiateHackViewController.h; path = Controllers/InitiateHackViewController.h; sourceTree = "<group>"; };
 		FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitiateHackViewController.m; path = Controllers/InitiateHackViewController.m; sourceTree = "<group>"; };
 		FC68615E1C68611A0008C818 /* HaQ-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HaQ-logo.png"; path = "Resources/HaQ-logo.png"; sourceTree = "<group>"; };
+		FC68616C1C68886A0008C818 /* HaQ-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HaQ-Bridging-Header.h"; sourceTree = "<group>"; };
+		FC68616D1C688A110008C818 /* DoubleCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleCircleButton.swift; path = Views/DoubleCircleButton.swift; sourceTree = "<group>"; };
+		FC68616F1C68C12D0008C818 /* Attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Attack.h; path = Models/Attack.h; sourceTree = "<group>"; };
+		FC6861701C68C12D0008C818 /* Attack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Attack.m; path = Models/Attack.m; sourceTree = "<group>"; };
+		FC6861721C68C3FF0008C818 /* BeingAttackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeingAttackedView.h; path = Views/BeingAttackedView.h; sourceTree = "<group>"; };
+		FC6861731C68C3FF0008C818 /* BeingAttackedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeingAttackedView.m; path = Views/BeingAttackedView.m; sourceTree = "<group>"; };
+		FC6861751C68C4130008C818 /* BeingAttackedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeingAttackedView.xib; path = Views/BeingAttackedView.xib; sourceTree = "<group>"; };
 		FCA3313F1C636C1E00F616AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		FCA331401C636C1E00F616AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		FCA331421C636C2F00F616AC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controllers/RegisterViewController.h; sourceTree = "<group>"; };
@@ -162,6 +173,8 @@
 				FC5FC30C1C63BF77004C0AD6 /* Item.m */,
 				FCD11EF21C64B97900DA6EFA /* Friendship.h */,
 				FCD11EF31C64B97900DA6EFA /* Friendship.m */,
+				FC68616F1C68C12D0008C818 /* Attack.h */,
+				FC6861701C68C12D0008C818 /* Attack.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 				FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */,
 				FC6256681C6134D200FCAE56 /* Info.plist */,
 				FC6256571C6134D100FCAE56 /* Supporting Files */,
+				FC68616C1C68886A0008C818 /* HaQ-Bridging-Header.h */,
 			);
 			path = HaQ;
 			sourceTree = "<group>";
@@ -299,6 +313,10 @@
 				FCD33B001C68006C00F2465A /* StatusItemView.m */,
 				FCD33B141C68264300F2465A /* BackgroundAnimation.h */,
 				FCD33B151C68264300F2465A /* BackgroundAnimation.m */,
+				FC68616D1C688A110008C818 /* DoubleCircleButton.swift */,
+				FC6861721C68C3FF0008C818 /* BeingAttackedView.h */,
+				FC6861731C68C3FF0008C818 /* BeingAttackedView.m */,
+				FC6861751C68C4130008C818 /* BeingAttackedView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -372,6 +390,7 @@
 				FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */,
 				FCD33B261C683B0300F2465A /* animation_2.png in Resources */,
 				FCD33B241C683AF800F2465A /* animation_1.png in Resources */,
+				FC6861761C68C4130008C818 /* BeingAttackedView.xib in Resources */,
 				FC630A651C6716D20060FF5D /* icon_money.png in Resources */,
 				FC630A6C1C67397A0060FF5D /* PictureCell.xib in Resources */,
 				FCD33B0E1C681B2B00F2465A /* status_money_bag.png in Resources */,
@@ -443,10 +462,12 @@
 				FCD11EE71C64A86B00DA6EFA /* Validator.m in Sources */,
 				FCD11EFA1C64D1BD00DA6EFA /* HackViewController.m in Sources */,
 				FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */,
+				FC6861741C68C3FF0008C818 /* BeingAttackedView.m in Sources */,
 				FCD11EEE1C64AA7600DA6EFA /* GlobalConstants.m in Sources */,
 				FCD11F0C1C64E81500DA6EFA /* GoogleMapViewController.m in Sources */,
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
 				FCD33B161C68264300F2465A /* BackgroundAnimation.m in Sources */,
+				FC68616E1C688A110008C818 /* DoubleCircleButton.swift in Sources */,
 				FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */,
 				FCD33AFA1C67FC0F00F2465A /* ChooseTargetToHackViewController.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
@@ -458,6 +479,7 @@
 				FCD11EFD1C64D1D000DA6EFA /* TargetsViewController.m in Sources */,
 				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
 				FCD11F161C652A3600DA6EFA /* PictureCell.m in Sources */,
+				FC6861711C68C12D0008C818 /* Attack.m in Sources */,
 				FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
 				FCD11F061C64DD7900DA6EFA /* DataManager.m in Sources */,

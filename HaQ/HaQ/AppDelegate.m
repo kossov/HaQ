@@ -13,6 +13,7 @@
 #import "Friendship.h"
 #import "Item.h"
 #import "DataUpdateProtocol.h"
+#import "Attack.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Attack registerSubclass];
     [Friendship registerSubclass];
     [Item registerSubclass];
     
@@ -66,7 +68,9 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    PFUser *user = [PFUser currentUser];
+    user[@"isOnline"] = @NO;
+    [user saveInBackground];
 }
 
 @end

@@ -71,6 +71,7 @@
     PFQuery *suchFriendshipIsNotExistant = [PFQuery queryWithClassName:@"Friendship"];
     [suchFriendshipIsNotExistant whereKey:@"byUser" equalTo:currentUser.username];
     [suchFriendshipIsNotExistant whereKey:@"toUser" equalTo:selectedUser.username];
+    [suchFriendshipIsNotExistant whereKey:@"objectId" notEqualTo:currentUser.objectId];
     [suchFriendshipIsNotExistant getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         __block UIAlertController *alert;

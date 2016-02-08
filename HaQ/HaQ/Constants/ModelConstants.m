@@ -15,5 +15,7 @@ NSString *const TargetContactPending = @"Pending";
 NSString *const TargetContactDeclined = @"Declined";
 
 NSString *const ItemMoney = @"Money";
+NSString *const UserStatusActive = @"active";
+NSString *const UserStatusInactive = @"not active";
 
 @end

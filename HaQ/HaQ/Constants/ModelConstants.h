@@ -15,5 +15,7 @@ extern NSString *const TargetContactPending;
 extern NSString *const TargetContactDeclined;
 
 extern NSString *const ItemMoney;
+extern NSString *const UserStatusActive;
+extern NSString *const UserStatusInactive;
 
 @end

@@ -58,8 +58,10 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (user) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            user[@"isOnline"] = @YES;
+            [user saveInBackground];
             [self MoveToMainStage];
         } else {
             NSString *errorString = [HelperMethods getStringFromError:error];

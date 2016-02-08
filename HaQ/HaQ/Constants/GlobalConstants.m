@@ -18,6 +18,8 @@ NSInteger const PasswordMaxLength = 10;
 
 NSInteger const ItemsPerDay = 5;
 
+NSInteger const InitiateAttackCountInSeconds = 5;
+
 NSString *const InvalidUsernameMessage = @"Username must be with at least 5 symbols.";
 NSString *const InvalidPasswordMessage = @"You forgot your password! At least 5 symbols, pleeease..";
 NSString *const InvalidConfirmPasswordMessage = @"Confirm password with at least 5!!1 symbols!";
@@ -35,5 +37,7 @@ NSString *const ItemAlreadyClaimedMessageTitle = @"Someone already claimed that 
 NSString *const ItemAlreadyClaimedMessageDescription = @"He must have been hacked and traced. Dayuumn!";
 NSString *const ItemSuccessfullyClaimedMessageTitle = @"Item claimed!";
 NSString *const ItemSuccessfullyClaimedMessageDescription = @"#MUSTBENICE";
+NSString *const UserIsBusyOrNotAccesableMessageTitle = @"Sorry..";
+NSString *const UserIsBusyOrNotAccesableMessageDescription = @"Can't be Hacked right now..(others might hack him also)";
 
 @end

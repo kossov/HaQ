@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface InitiateHackViewController : UIViewController
+@interface InitiateHackViewController : UIViewController <UIGestureRecognizerDelegate>
+
+@property PFUser *userToHack;
+@property (weak, nonatomic) IBOutlet UILabel *UsernameLabel;
 
 @end
