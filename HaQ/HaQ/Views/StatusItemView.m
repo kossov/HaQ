@@ -16,7 +16,7 @@
     image.backgroundColor = [UIColor clearColor];
     [self addSubview:image];
     
-    UILabel *bagsCount = [[UILabel alloc] initWithFrame:CGRectMake(rect.size.width/2 - 12, rect.size.height/2, rect.size.width,30)];
+    UILabel *bagsCount = [[UILabel alloc] initWithFrame:CGRectMake(rect.size.width/2 - 12, rect.size.height/2 - 15, rect.size.width,30)];
     bagsCount.text = self.bagsCount;
     bagsCount.backgroundColor = [UIColor clearColor];
     bagsCount.font = [bagsCount.font fontWithSize:45];
