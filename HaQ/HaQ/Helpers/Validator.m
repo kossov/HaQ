@@ -24,7 +24,7 @@
 }
 
 + (BOOL)arePasswordsMatching:(NSString*)password andConfirmPassword:(NSString*)confirmPass {
-    return password == confirmPass;
+    return [password isEqualToString:confirmPass];
 }
 
 @end

@@ -7,19 +7,19 @@
 //
 
 #import <Parse/Parse.h>
-#import "DataUpdateProtocol.h"
+#import "DataFetcher.h"
 #import "DataManager.h"
 
-@implementation FetchDataProtocol
+@implementation DataFetcher
 
-static FetchDataProtocol *dataProtocol = nil;
+static DataFetcher *dataFetcher = nil;
 
-+(FetchDataProtocol*)getInstance {
-    if (dataProtocol == nil) {
-        dataProtocol = [[FetchDataProtocol alloc] init];
++(DataFetcher*)getInstance {
+    if (dataFetcher == nil) {
+        dataFetcher = [[DataFetcher alloc] init];
     }
     
-    return dataProtocol;
+    return dataFetcher;
 }
 
 -(void)checkForAttack{

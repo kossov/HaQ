@@ -12,6 +12,7 @@
 #import "HelperMethods.h"
 #import "GlobalConstants.h"
 #import "ModelConstants.h"
+#import "MoneyBag.h"
 
 @interface RegisterViewController ()
 
@@ -71,17 +72,18 @@
             [_alert addAction:alertOkButton];
             [self presentViewController:_alert animated:YES completion:nil];
         } else {
-            NSString *errorString = [HelperMethods getStringFromError:error];
-            _alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+            _alert.title = SomethingBadHappenedTitleMessage;
+            _alert.message = [HelperMethods getStringFromError:error];
             [self presentViewController:_alert animated:YES completion:nil];
         }
     }];
 }
 
 - (void)addCustomFieldsToUser {
-    _user[@"moneyBags"] = @3;
-    _user[@"isOnline"] = @NO;
+    MoneyBag *initialBagWithMoney = [MoneyBag moneyBagWithUser:_user.username andValue:InitialMoney];
+    [initialBagWithMoney saveInBackground];
     
+    _user[@"isOnline"] = @NO;
     [_user saveInBackground];
 }
 

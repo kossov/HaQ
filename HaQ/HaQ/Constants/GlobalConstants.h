@@ -20,6 +20,8 @@ extern NSInteger const ItemsPerDay;
 
 extern NSInteger const InitiateAttackCountInSeconds;
 
+extern NSInteger const InitialMoney;
+
 extern NSString *const InvalidUsernameMessage;
 extern NSString *const InvalidPasswordMessage;
 extern NSString *const InvalidConfirmPasswordMessage;
@@ -44,5 +46,17 @@ extern NSString *const AttackerGuessedSuccessfullyMessageTitle;
 extern NSString *const AttackerGuessedSuccessfullyMessageDescription;
 extern NSString *const AttackerGuessedNotSuccessfullyMessageTitle;
 extern NSString *const AttackerGuessedNotSuccessfullyMessageDescription;
+
+extern NSString *const HackedSuccessfullyMessageTitle;
+extern NSString *const HackedSuccessfullyMessageDescription;
+
+extern NSString *const HackTimeOutMessageTitle;
+extern NSString *const HackTimeOutMessageDescription;
+
+extern NSString *const HackedLostMoneyMessageTitle;
+extern NSString *const HackedLostMoneyMessageDescription;
+
+extern NSString *const HackFailedUserBustedMessageTitle;
+extern NSString *const HackFailedUserBustedMessageDescription;
 
 @end

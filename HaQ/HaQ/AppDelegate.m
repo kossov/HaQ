@@ -10,10 +10,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "AppDelegate.h"
 #import "DataManager.h"
+#import "DataFetcher.h"
 #import "Friendship.h"
 #import "Item.h"
-#import "DataUpdateProtocol.h"
 #import "Attack.h"
+#import "MoneyBag.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,7 @@
     [Attack registerSubclass];
     [Friendship registerSubclass];
     [Item registerSubclass];
+    [MoneyBag registerSubclass];
     
     [Parse setApplicationId:@"cm5tjPtfKoRz0TSj1xUiNMyt3zAQ7VTSfF6a2VgW" clientKey:@"FzW0YurxuShdoiFj6RICo069yPIzCBVoKXWTgCZ2"];
     [GMSServices provideAPIKey:@"AIzaSyAloq_exCmGNa2QU1Ycq1VM_D0FYfO_DRI"];
@@ -54,8 +56,8 @@
         bgTask = UIBackgroundTaskInvalid;
     }];
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
-                                                      target:[FetchDataProtocol getInstance]
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:15
+                                                      target:[DataFetcher getInstance]
                                                     selector:@selector(checkForAttack)
                                                     userInfo:nil
                                                      repeats:YES];

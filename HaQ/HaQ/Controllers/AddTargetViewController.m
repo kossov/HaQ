@@ -28,18 +28,18 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     PFQuery *query = [PFUser query];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {
             NSString *errorMessage = [HelperMethods getStringFromError:error];
             UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorMessage];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self presentViewController:alert animated:YES completion:nil];
+            return;
         }
         
         _allTargetUsernames = [NSMutableArray arrayWithArray:objects];
         _displayItems = [NSMutableArray arrayWithArray:objects];
         self.TargetNamesTableView.dataSource = self;
         [self.TargetNamesTableView reloadData];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
     
     self.TargetNamesTableView.delegate = self;
@@ -81,7 +81,6 @@
             if (targetContact.isApproved == TargetContactDeclined) {
                 targetContact.isApproved = TargetContactPending;
                 [targetContact saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                    
                     alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
                     [self presentViewController:alert animated:YES completion:nil];
                 }];
@@ -104,8 +103,8 @@
             } else {
                 NSString *errorString = [HelperMethods getStringFromError:error];
                 alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-                
             }
+            
             [self presentViewController:alert animated:YES completion:nil];
         }];
     }];

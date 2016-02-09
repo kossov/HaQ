@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		626BA0DCBFEE2A74D640F623 /* libPods-HaQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B9FE73FC311619F2C593FC /* libPods-HaQ.a */; };
+		FC0F1BAF1C695E470020A7AE /* MoneyBag.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0F1BAE1C695E470020A7AE /* MoneyBag.m */; };
+		FC0F1BB31C69AEB40020A7AE /* status_money_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0F1BB21C69AEB40020A7AE /* status_money_bag.png */; };
+		FC0F1BB51C69AEBD0020A7AE /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0F1BB41C69AEBD0020A7AE /* icon_money.png */; };
+		FC0F1BB71C69AEC70020A7AE /* glow-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0F1BB61C69AEC70020A7AE /* glow-marker.png */; };
 		FC13BB8C1C66809C002AA905 /* DecideForPendingTargetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */; };
 		FC5FC30D1C63BF77004C0AD6 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC30C1C63BF77004C0AD6 /* Item.m */; };
 		FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5FC3101C63C351004C0AD6 /* RandomNumberGenerator.m */; };
@@ -16,16 +20,13 @@
 		FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC62565B1C6134D100FCAE56 /* AppDelegate.m */; };
 		FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6256631C6134D200FCAE56 /* Assets.xcassets */; };
 		FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6256651C6134D200FCAE56 /* LaunchScreen.storyboard */; };
-		FC630A621C6716BE0060FF5D /* glow-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = FC630A641C6716BE0060FF5D /* glow-marker.png */; };
-		FC630A651C6716D20060FF5D /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = FC630A671C6716D20060FF5D /* icon_money.png */; };
 		FC630A6C1C67397A0060FF5D /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC630A6B1C67397A0060FF5D /* PictureCell.xib */; };
-		FC630A761C6760390060FF5D /* DataUpdateProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC630A751C6760390060FF5D /* DataUpdateProtocol.m */; };
+		FC630A761C6760390060FF5D /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FC630A751C6760390060FF5D /* DataFetcher.m */; };
 		FC68615D1C685E5C0008C818 /* InitiateHackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */; };
 		FC68615F1C68611A0008C818 /* HaQ-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC68615E1C68611A0008C818 /* HaQ-logo.png */; };
 		FC68616E1C688A110008C818 /* DoubleCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68616D1C688A110008C818 /* DoubleCircleButton.swift */; };
 		FC6861711C68C12D0008C818 /* Attack.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6861701C68C12D0008C818 /* Attack.m */; };
 		FC6861831C68ED470008C818 /* BeingHackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6861821C68ED470008C818 /* BeingHackedViewController.m */; };
-		FC6861871C68EF8A0008C818 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6861851C68EF8A0008C818 /* ViewController.m */; };
 		FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331401C636C1E00F616AC /* LoginViewController.m */; };
 		FCA331441C636C2F00F616AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331431C636C2F00F616AC /* RegisterViewController.m */; };
 		FCA331481C636C8500F616AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA331471C636C8500F616AC /* MainViewController.m */; };
@@ -47,7 +48,6 @@
 		FCD33AF71C67EFBD00F2465A /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD33AF61C67EFBD00F2465A /* UserDetailsView.xib */; };
 		FCD33AFA1C67FC0F00F2465A /* ChooseTargetToHackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33AF91C67FC0F00F2465A /* ChooseTargetToHackViewController.m */; };
 		FCD33B011C68006C00F2465A /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33B001C68006C00F2465A /* StatusItemView.m */; };
-		FCD33B0E1C681B2B00F2465A /* status_money_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD33B0C1C681B2700F2465A /* status_money_bag.png */; };
 		FCD33B161C68264300F2465A /* BackgroundAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD33B151C68264300F2465A /* BackgroundAnimation.m */; };
 		FCD33B241C683AF800F2465A /* animation_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD33B231C683AF800F2465A /* animation_1.png */; };
 		FCD33B261C683B0300F2465A /* animation_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD33B251C683B0300F2465A /* animation_2.png */; };
@@ -57,6 +57,11 @@
 		56B9FE73FC311619F2C593FC /* libPods-HaQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaQ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5237C04DDC5F1219AA4EA24 /* Pods-HaQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.release.xcconfig"; sourceTree = "<group>"; };
 		E2835DEEC783EE3201BBD73D /* Pods-HaQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaQ/Pods-HaQ.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0F1BAD1C695E470020A7AE /* MoneyBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoneyBag.h; path = Models/MoneyBag.h; sourceTree = "<group>"; };
+		FC0F1BAE1C695E470020A7AE /* MoneyBag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoneyBag.m; path = Models/MoneyBag.m; sourceTree = "<group>"; };
+		FC0F1BB21C69AEB40020A7AE /* status_money_bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_money_bag.png; path = Resources/status_money_bag.png; sourceTree = "<group>"; };
+		FC0F1BB41C69AEBD0020A7AE /* icon_money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_money.png; path = Resources/icon_money.png; sourceTree = "<group>"; };
+		FC0F1BB61C69AEC70020A7AE /* glow-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "glow-marker.png"; path = "Resources/glow-marker.png"; sourceTree = "<group>"; };
 		FC13BB8A1C66809C002AA905 /* DecideForPendingTargetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DecideForPendingTargetsViewController.h; path = Controllers/DecideForPendingTargetsViewController.h; sourceTree = "<group>"; };
 		FC13BB8B1C66809C002AA905 /* DecideForPendingTargetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DecideForPendingTargetsViewController.m; path = Controllers/DecideForPendingTargetsViewController.m; sourceTree = "<group>"; };
 		FC5FC30B1C63BF77004C0AD6 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Models/Item.h; sourceTree = "<group>"; };
@@ -72,13 +77,9 @@
 		FC6256631C6134D200FCAE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6256661C6134D200FCAE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6256681C6134D200FCAE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC630A631C6716BE0060FF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/glow-marker.png"; sourceTree = "<group>"; };
-		FC630A661C6716D20060FF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/icon_money.png; sourceTree = "<group>"; };
-		FC630A681C6716D50060FF5D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/icon_money.png; sourceTree = "<group>"; };
-		FC630A691C6716DA0060FF5D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/glow-marker.png"; sourceTree = "<group>"; };
 		FC630A6B1C67397A0060FF5D /* PictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PictureCell.xib; path = Views/PictureCell.xib; sourceTree = "<group>"; };
-		FC630A741C6760390060FF5D /* DataUpdateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataUpdateProtocol.h; path = Helpers/DataUpdateProtocol.h; sourceTree = "<group>"; };
-		FC630A751C6760390060FF5D /* DataUpdateProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataUpdateProtocol.m; path = Helpers/DataUpdateProtocol.m; sourceTree = "<group>"; };
+		FC630A741C6760390060FF5D /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataFetcher.h; path = Helpers/DataFetcher.h; sourceTree = "<group>"; };
+		FC630A751C6760390060FF5D /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataFetcher.m; path = Helpers/DataFetcher.m; sourceTree = "<group>"; };
 		FC68615B1C685E5C0008C818 /* InitiateHackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitiateHackViewController.h; path = Controllers/InitiateHackViewController.h; sourceTree = "<group>"; };
 		FC68615C1C685E5C0008C818 /* InitiateHackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitiateHackViewController.m; path = Controllers/InitiateHackViewController.m; sourceTree = "<group>"; };
 		FC68615E1C68611A0008C818 /* HaQ-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HaQ-logo.png"; path = "Resources/HaQ-logo.png"; sourceTree = "<group>"; };
@@ -88,8 +89,6 @@
 		FC6861701C68C12D0008C818 /* Attack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Attack.m; path = Models/Attack.m; sourceTree = "<group>"; };
 		FC6861811C68ED470008C818 /* BeingHackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeingHackedViewController.h; path = Controllers/BeingHackedViewController.h; sourceTree = "<group>"; };
 		FC6861821C68ED470008C818 /* BeingHackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeingHackedViewController.m; path = Controllers/BeingHackedViewController.m; sourceTree = "<group>"; };
-		FC6861841C68EF8A0008C818 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Views/ViewController.h; sourceTree = "<group>"; };
-		FC6861851C68EF8A0008C818 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Views/ViewController.m; sourceTree = "<group>"; };
 		FCA3313F1C636C1E00F616AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		FCA331401C636C1E00F616AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 		FCA331421C636C2F00F616AC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Controllers/RegisterViewController.h; sourceTree = "<group>"; };
@@ -130,8 +129,6 @@
 		FCD33AF91C67FC0F00F2465A /* ChooseTargetToHackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseTargetToHackViewController.m; path = Controllers/ChooseTargetToHackViewController.m; sourceTree = "<group>"; };
 		FCD33AFF1C68006C00F2465A /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusItemView.h; path = Views/StatusItemView.h; sourceTree = "<group>"; };
 		FCD33B001C68006C00F2465A /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusItemView.m; path = Views/StatusItemView.m; sourceTree = "<group>"; };
-		FCD33B0B1C681B2700F2465A /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/status_money_bag.png; sourceTree = "<group>"; };
-		FCD33B0D1C681B2900F2465A /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/status_money_bag.png; sourceTree = "<group>"; };
 		FCD33B141C68264300F2465A /* BackgroundAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundAnimation.h; path = Views/BackgroundAnimation.h; sourceTree = "<group>"; };
 		FCD33B151C68264300F2465A /* BackgroundAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundAnimation.m; path = Views/BackgroundAnimation.m; sourceTree = "<group>"; };
 		FCD33B231C683AF800F2465A /* animation_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animation_1.png; path = Resources/animation_1.png; sourceTree = "<group>"; };
@@ -176,6 +173,8 @@
 				FCD11EF31C64B97900DA6EFA /* Friendship.m */,
 				FC68616F1C68C12D0008C818 /* Attack.h */,
 				FC6861701C68C12D0008C818 /* Attack.m */,
+				FC0F1BAD1C695E470020A7AE /* MoneyBag.h */,
+				FC0F1BAE1C695E470020A7AE /* MoneyBag.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -193,8 +192,8 @@
 				FCD11F051C64DD7900DA6EFA /* DataManager.m */,
 				FC60EADF1C66E8C5006F2C21 /* LocationManager.h */,
 				FC60EAE01C66E8C5006F2C21 /* LocationManager.m */,
-				FC630A741C6760390060FF5D /* DataUpdateProtocol.h */,
-				FC630A751C6760390060FF5D /* DataUpdateProtocol.m */,
+				FC630A741C6760390060FF5D /* DataFetcher.h */,
+				FC630A751C6760390060FF5D /* DataFetcher.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -293,12 +292,12 @@
 		FCD11F0E1C64EEB300DA6EFA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FC0F1BB61C69AEC70020A7AE /* glow-marker.png */,
+				FC0F1BB41C69AEBD0020A7AE /* icon_money.png */,
+				FC0F1BB21C69AEB40020A7AE /* status_money_bag.png */,
 				FC68615E1C68611A0008C818 /* HaQ-logo.png */,
 				FCD33B251C683B0300F2465A /* animation_2.png */,
 				FCD33B231C683AF800F2465A /* animation_1.png */,
-				FCD33B0C1C681B2700F2465A /* status_money_bag.png */,
-				FC630A671C6716D20060FF5D /* icon_money.png */,
-				FC630A641C6716BE0060FF5D /* glow-marker.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -317,8 +316,6 @@
 				FCD33B141C68264300F2465A /* BackgroundAnimation.h */,
 				FCD33B151C68264300F2465A /* BackgroundAnimation.m */,
 				FC68616D1C688A110008C818 /* DoubleCircleButton.swift */,
-				FC6861841C68EF8A0008C818 /* ViewController.h */,
-				FC6861851C68EF8A0008C818 /* ViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -390,16 +387,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6256671C6134D200FCAE56 /* LaunchScreen.storyboard in Resources */,
+				FC0F1BB71C69AEC70020A7AE /* glow-marker.png in Resources */,
 				FCD33B261C683B0300F2465A /* animation_2.png in Resources */,
 				FCD33B241C683AF800F2465A /* animation_1.png in Resources */,
-				FC630A651C6716D20060FF5D /* icon_money.png in Resources */,
 				FC630A6C1C67397A0060FF5D /* PictureCell.xib in Resources */,
-				FCD33B0E1C681B2B00F2465A /* status_money_bag.png in Resources */,
 				FC68615F1C68611A0008C818 /* HaQ-logo.png in Resources */,
+				FC0F1BB31C69AEB40020A7AE /* status_money_bag.png in Resources */,
 				FCD33AF71C67EFBD00F2465A /* UserDetailsView.xib in Resources */,
 				FCD33AED1C67E67F00F2465A /* Main.storyboard in Resources */,
 				FC6256641C6134D200FCAE56 /* Assets.xcassets in Resources */,
-				FC630A621C6716BE0060FF5D /* glow-marker.png in Resources */,
+				FC0F1BB51C69AEBD0020A7AE /* icon_money.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,11 +465,10 @@
 				FC62565C1C6134D100FCAE56 /* AppDelegate.m in Sources */,
 				FCD33B161C68264300F2465A /* BackgroundAnimation.m in Sources */,
 				FC68616E1C688A110008C818 /* DoubleCircleButton.swift in Sources */,
-				FC6861871C68EF8A0008C818 /* ViewController.m in Sources */,
 				FC5FC3111C63C351004C0AD6 /* RandomNumberGenerator.m in Sources */,
 				FCD33AFA1C67FC0F00F2465A /* ChooseTargetToHackViewController.m in Sources */,
 				FC6256591C6134D100FCAE56 /* main.m in Sources */,
-				FC630A761C6760390060FF5D /* DataUpdateProtocol.m in Sources */,
+				FC630A761C6760390060FF5D /* DataFetcher.m in Sources */,
 				FCA331481C636C8500F616AC /* MainViewController.m in Sources */,
 				FCD11EF41C64B97900DA6EFA /* Friendship.m in Sources */,
 				FCD11F201C65762300DA6EFA /* PendingTargetsViewController.m in Sources */,
@@ -481,6 +477,7 @@
 				FCD11EF11C64AA8400DA6EFA /* ModelConstants.m in Sources */,
 				FCD11F161C652A3600DA6EFA /* PictureCell.m in Sources */,
 				FC6861711C68C12D0008C818 /* Attack.m in Sources */,
+				FC0F1BAF1C695E470020A7AE /* MoneyBag.m in Sources */,
 				FCD11F031C64D5E800DA6EFA /* AddTargetViewController.m in Sources */,
 				FCA331411C636C1E00F616AC /* LoginViewController.m in Sources */,
 				FC6861831C68ED470008C818 /* BeingHackedViewController.m in Sources */,
@@ -502,36 +499,6 @@
 				FC6256661C6134D200FCAE56 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		FC630A641C6716BE0060FF5D /* glow-marker.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC630A631C6716BE0060FF5D /* Base */,
-				FC630A691C6716DA0060FF5D /* en */,
-			);
-			name = "glow-marker.png";
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FC630A671C6716D20060FF5D /* icon_money.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC630A661C6716D20060FF5D /* Base */,
-				FC630A681C6716D50060FF5D /* en */,
-			);
-			name = icon_money.png;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FCD33B0C1C681B2700F2465A /* status_money_bag.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCD33B0B1C681B2700F2465A /* Base */,
-				FCD33B0D1C681B2900F2465A /* en */,
-			);
-			name = status_money_bag.png;
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -624,6 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HaQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kossov.HaQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -639,6 +607,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HaQ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kossov.HaQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";

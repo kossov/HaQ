@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DoubleCircleButton: UIView {
+@objc class DoubleCircleButton: UIView {
     
     var scale: CGFloat = 0.0;
     var layerr = CAShapeLayer();

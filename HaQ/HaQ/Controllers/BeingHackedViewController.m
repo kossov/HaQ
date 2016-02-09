@@ -15,7 +15,8 @@
 #import "BeingHackedViewController.h"
 #import "Attack.h"
 #import "DataManager.h"
-#import "DataUpdateProtocol.h"
+#import "DataFetcher.h"
+#import "MoneyBag.h"
 
 @interface BeingHackedViewController ()
 
@@ -28,6 +29,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.TargetsTable.delegate = self;
+    self.SearchBar.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
+    [self updateTableData];
+}
+
+- (void)updateTableData {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" notEqualTo:[PFUser currentUser].username];
@@ -45,9 +56,6 @@
         [self.TargetsTable reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
-    self.TargetsTable.delegate = self;
-    self.SearchBar.delegate = self;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -69,22 +77,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PFUser *selectedUser = ((PFUser*)_displayItems[indexPath.row]);
-    PFUser *currentUser = [PFUser currentUser];
-    Attack *attack = [DataManager getInstance].hackAttack;
-    __block UIAlertController *alert;
-    if (selectedUser.username == attack.byUser) {
-        // TODO: add point
-        alert = [UIAlertController alertControllerWithTitle: AttackerGuessedSuccessfullyMessageTitle
-                                                    message: AttackerGuessedSuccessfullyMessageDescription
-                                             preferredStyle:UIAlertControllerStyleAlert];
-    } else {
-        // TODO: remove point
-        alert = [UIAlertController alertControllerWithTitle: AttackerGuessedNotSuccessfullyMessageTitle
-                                                     message: AttackerGuessedNotSuccessfullyMessageDescription
-                                              preferredStyle:UIAlertControllerStyleAlert];
-    }
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __block UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:@"Dummy Alert"];
     UIAlertAction *alertOkButton = [UIAlertAction
                                     actionWithTitle:@"OK"
                                     style:UIAlertActionStyleDefault
@@ -92,12 +86,58 @@
                                     {
                                         [self performSegueWithIdentifier:@"attackHandled" sender:self];
                                     }];
-    
-    attack.hasEnded = YES;
-    [attack saveInBackground];
-    [FetchDataProtocol getInstance].isHandled = YES;
     [alert addAction:alertOkButton];
-    [self presentViewController:alert animated:YES completion:nil];
+    
+    PFUser *selectedUser = ((PFUser*)_displayItems[indexPath.row]);
+    Attack *attack = [DataManager getInstance].hackAttack;
+    if (attack.hasEnded) {
+        // TAKE FROM HIM ONE POINT
+        PFQuery *queryTakeAPoint = [PFQuery queryWithClassName:@"MoneyBag"];
+        [queryTakeAPoint whereKey:@"username" equalTo:[PFUser currentUser].username];
+        [queryTakeAPoint getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            MoneyBag *userMoneyBag = (MoneyBag*)object;
+            userMoneyBag.value -= 1;
+            [userMoneyBag saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (error) {
+                    alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:[HelperMethods getStringFromError:error]];
+                } else {
+                    alert = [HelperMethods getAlert:HackedLostMoneyMessageTitle andMessage:HackedLostMoneyMessageDescription];
+                }
+                
+                [DataFetcher getInstance].isHandled = YES;
+                [self presentViewController:alert animated:YES completion:nil];
+            }];
+        }];
+        
+        return;
+    }
+    
+    if (selectedUser.username == attack.byUser) {
+        // GIVE HIM A POINT, END ATTACK
+        // THE ATTACKER ALSO CHECKS IF IT IS INVALID -> GIVE HIM A POINT, END ATTACK, IF NOT TAKE A POINT
+        PFQuery *queryGiveAPoint = [PFQuery queryWithClassName:@"MoneyBag"];
+        [queryGiveAPoint whereKey:@"username" equalTo:[PFUser currentUser].username];
+        [queryGiveAPoint getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+            MoneyBag *userMoneyBag = (MoneyBag*)object;
+            [userMoneyBag incrementKey:@"value"];
+            [userMoneyBag saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                alert.title = AttackerGuessedSuccessfullyMessageTitle;
+                alert.message = AttackerGuessedSuccessfullyMessageDescription;
+                
+                attack.hasEnded = YES;
+                [attack saveInBackground];
+                [self presentViewController:alert animated:YES completion:nil];
+            }];
+        }];
+    } else {
+        // DONT GIVE HIM A POINT, DONT END ATTACK -> ATTACKER WILL END IT AND WILL TAKE A POINT FOR IT WHEN TAPPED 50 TIMES
+        alert.title = AttackerGuessedNotSuccessfullyMessageTitle;
+        alert.message = AttackerGuessedNotSuccessfullyMessageDescription;
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
+    [DataFetcher getInstance].isHandled = YES;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

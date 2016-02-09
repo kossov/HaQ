@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataUpdateProtocol.h"
+#import "DataFetcher.h"
 
-@interface ChooseTargetToHackViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, FetchDataProtocolDelegate>
+@interface ChooseTargetToHackViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, DataFetcherDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *HackTargetsTableView;
 

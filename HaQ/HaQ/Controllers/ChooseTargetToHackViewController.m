@@ -39,7 +39,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [FetchDataProtocol getInstance].delegate = self;
+    [DataFetcher getInstance].delegate = self;
 }
 
 - (void)hackAttack {
@@ -50,7 +50,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     PFGeoPoint *currentLocation = [DataManager getInstance].currentPosition;
     PFQuery *query = [PFUser query];
-    [query whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
+    [query whereKey:@"username" notEqualTo:[PFUser currentUser].username];
     [query whereKey:@"isOnline" equalTo:@YES];
     [query whereKey:@"location" nearGeoPoint:currentLocation withinKilometers:0.1];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable users, NSError * _Nullable error) {

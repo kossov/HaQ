@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol FetchDataProtocolDelegate <NSObject>
+@protocol DataFetcherDelegate <NSObject>
 
 @required
 -(void) hackAttack;
 
 @end
 
-@interface FetchDataProtocol : NSObject
+@interface DataFetcher : NSObject
 
 @property BOOL isHandled;
-@property (nonatomic, weak) id <FetchDataProtocolDelegate> delegate;
+@property (nonatomic, weak) id <DataFetcherDelegate> delegate;
 
-+ (FetchDataProtocol*)getInstance;
++ (DataFetcher*)getInstance;
 
 -(void)checkForAttack;
 

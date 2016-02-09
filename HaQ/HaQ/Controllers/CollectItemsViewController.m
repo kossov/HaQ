@@ -38,7 +38,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [FetchDataProtocol getInstance].delegate = self;
+    [DataFetcher getInstance].delegate = self;
 }
 
 -(void)hackAttack {

@@ -15,6 +15,7 @@
 #import "HackViewController.h"
 #import "GoogleMapViewController.h"
 #import "Attack.h"
+#import "DataManager.h"
 
 @interface InitiateHackViewController ()
 
@@ -103,7 +104,8 @@
                 if (currentAttack.byUser == self.userToHack.username ||
                     currentAttack.toUser == self.userToHack.username) {
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    UIAlertController *alert = [HelperMethods getAlert:UserIsBusyOrNotAccesableMessageTitle andMessage:UserIsBusyOrNotAccesableMessageDescription];
+                    UIAlertController *alert = [HelperMethods getAlert:UserIsBusyOrNotAccesableMessageTitle
+                                                            andMessage:UserIsBusyOrNotAccesableMessageDescription];
                     [self presentViewController:alert animated:YES completion:nil];
                     return;
                 }
@@ -120,6 +122,7 @@
                     return;
                 }
                 
+                [DataManager getInstance].hackAttack = attack;
                 [self loadHackScreen];
             }];
         }];

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataUpdateProtocol.h"
+#import "DataFetcher.h"
 #import "StatusItemView.h"
 
-@interface MainViewController : UIViewController <CLLocationManagerDelegate, FetchDataProtocolDelegate>
+@interface MainViewController : UIViewController <CLLocationManagerDelegate, DataFetcherDelegate>
 
 @property (nonatomic , strong) CLLocationManager *locationManager;
 

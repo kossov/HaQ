@@ -19,6 +19,8 @@
 #import "StatusItemView.h"
 #import "BackgroundAnimation.h"
 #import "BeingHackedViewController.h"
+#import "MoneyBag.h"
+
 @interface MainViewController ()
 
 @end
@@ -27,9 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // HIDE BACK BUTTON - COMMING FROM LOGINVIEWCONTROLLER
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
     
     if (![PFUser currentUser]) {
         [self moveToLogInStage];
@@ -51,32 +50,56 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    if (![PFUser currentUser]) {
+        return;
+    }
+    
+    [DataFetcher getInstance].delegate = self;
+    
+    for (UIView *subView in self.view.subviews)
+    {
+        if ([subView isKindOfClass:[StatusItemView class]])
+        {
+            [subView removeFromSuperview];
+        }
+    }
+    
+    [self addStatusItemView];
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
 }
 
 - (void)addStatusItemView {
-    StatusItemView *statusItemView = [[StatusItemView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - 100, 90,200,100)];
-    NSString *bagsCount = (NSString*)[PFUser currentUser][@"moneyBags"];
-    statusItemView.bagsCount = [NSString stringWithFormat:@"%ld", bagsCount.integerValue];
-    statusItemView.opaque = NO;
-    [self.view addSubview:statusItemView];
+    PFQuery *query = [PFQuery queryWithClassName:[MoneyBag parseClassName]];
+    [query whereKey:@"username" equalTo:[PFUser currentUser].username];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        // ignore error;
+        NSString *bagsCountAsString = [NSString stringWithFormat:@"%ld", ((MoneyBag*)object).value];
+        StatusItemView *statusItemView = [[StatusItemView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - (93 + (8 * bagsCountAsString.length)), 90,200,120)];
+        statusItemView.bagsCount = bagsCountAsString;
+        statusItemView.opaque = NO;
+        [self.view addSubview:statusItemView];
+    }];
 }
 
 - (void)logOutUser {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        if (error) {
-            NSString *errorString = [HelperMethods getStringFromError:error];
-            UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
-            [self presentViewController:alert animated:YES completion:^{
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            }];
+    PFUser *currentUser = [PFUser currentUser];
+    currentUser[@"isOnline"] = @NO;
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+            if (error) {
+                NSString *errorString = [HelperMethods getStringFromError:error];
+                UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                [self presentViewController:alert animated:YES completion:^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }];
+                
+                return;
+            }
             
-            return;
-        }
-        
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self moveToLogInStage];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self moveToLogInStage];
+        }];
     }];
 }
 
@@ -102,23 +125,8 @@
     [self performSegueWithIdentifier:@"CollectItems" sender:self];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [FetchDataProtocol getInstance].delegate = self;
-    
-    for (UIView *subView in self.view.subviews)
-    {
-        if ([subView isKindOfClass:[StatusItemView class]])
-        {
-            [subView removeFromSuperview];
-        }
-    }
-    
-    [self addStatusItemView];
-}
-
-
 -(void)hackAttack {
-    [FetchDataProtocol getInstance].isHandled = YES;
+    [DataFetcher getInstance].isHandled = YES;
     [self performSegueWithIdentifier:@"BeingHacked" sender:self];
 }
 

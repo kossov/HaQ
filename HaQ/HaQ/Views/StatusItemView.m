@@ -11,12 +11,6 @@
 @implementation StatusItemView
 
 - (void)drawRect:(CGRect)rect {
-//    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(rect.size.width /2 - 45, -30, 110, 30)];
-//    title.text = @"Money Bags";
-//    title.adjustsFontSizeToFitWidth = YES;
-//    title.textColor = [UIColor groupTableViewBackgroundColor];
-//    [self addSubview:title];
-    
     UIImageView * image = [[UIImageView alloc] initWithFrame:CGRectMake(rect.size.width / 2 - 98, 0, 200, 100)];
     [image setImage:[UIImage imageNamed:@"status_money_bag"]];
     image.backgroundColor = [UIColor clearColor];

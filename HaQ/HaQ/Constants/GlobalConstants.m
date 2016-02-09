@@ -20,6 +20,8 @@ NSInteger const ItemsPerDay = 5;
 
 NSInteger const InitiateAttackCountInSeconds = 5;
 
+NSInteger const InitialMoney = 3;
+
 NSString *const InvalidUsernameMessage = @"Username must be with at least 5 symbols.";
 NSString *const InvalidPasswordMessage = @"You forgot your password! At least 5 symbols, pleeease..";
 NSString *const InvalidConfirmPasswordMessage = @"Confirm password with at least 5!!1 symbols!";
@@ -41,8 +43,18 @@ NSString *const UserIsBusyOrNotAccesableMessageTitle = @"Sorry..";
 NSString *const UserIsBusyOrNotAccesableMessageDescription = @"Can't be Hacked right now..(others might hack him also)";
 
 NSString *const AttackerGuessedSuccessfullyMessageTitle = @"Noice!";
-NSString *const AttackerGuessedSuccessfullyMessageDescription = @"You guessed successfully! You Receive a Money Bag!";
+NSString *const AttackerGuessedSuccessfullyMessageDescription = @"You guessed successfully! You Receive a Money in the Bag!";
 NSString *const AttackerGuessedNotSuccessfullyMessageTitle = @"Sorry..";
-NSString *const AttackerGuessedNotSuccessfullyMessageDescription = @"They hacked you..";
+NSString *const AttackerGuessedNotSuccessfullyMessageDescription = @"You did not guessed correctly, they will hack you.. pretty soon..";
+NSString *const HackedSuccessfullyMessageTitle = @"Congratz!";
+NSString *const HackedSuccessfullyMessageDescription = @"No one even noticed! You get them money!";
+NSString *const HackTimeOutMessageTitle = @"Run man!";
+NSString *const HackTimeOutMessageDescription = @"Lets hope they don't find you, because you will loose that Bag.";
+
+NSString *const HackedLostMoneyMessageTitle = @"Sorry!!";
+NSString *const HackedLostMoneyMessageDescription = @"You have been hacked, before you respond.";
+
+NSString *const HackFailedUserBustedMessageTitle = @"Oops, Busted!";
+NSString *const HackFailedUserBustedMessageDescription = @"They found you before you hack them..";
 
 @end
