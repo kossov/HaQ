@@ -21,6 +21,7 @@
 #import "Item.h"
 #import "PictureCell.h"
 #import "LocationManager.h"
+#import "MoneyBag.h"
 
 @implementation CollectItemsViewController {
     NSMutableArray *_itemsForCurrentLocation;
@@ -110,8 +111,14 @@
                 alert = [HelperMethods getAlert:ItemSuccessfullyClaimedMessageTitle andMessage:ItemSuccessfullyClaimedMessageDescription];
             }
             
-            [user incrementKey:@"moneyBags"];
-            [user saveInBackground];
+            PFQuery *userMoneyBag = [PFQuery queryWithClassName:@"MoneyBag"];
+            [userMoneyBag whereKey:@"username" equalTo:user.username];
+            [userMoneyBag getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+                MoneyBag *bag = (MoneyBag*)object;
+                [bag incrementKey:@"value"];
+                [bag saveInBackground];
+            }];
+            
             [_itemsForCurrentLocation removeObjectAtIndex:indexPath.row];
             [self.ItemsTableView reloadData];
             [self presentViewController:alert animated:YES completion:nil];
@@ -137,6 +144,7 @@
             PFObject *itemsToAdd[6];
             for (int i = 0; i < ItemsPerDay; i++) {
                 Item *itemToAdd = [Item itemWithName:ItemMoney andLocation:[HelperMethods getRandomLocationInSofia]];
+                [itemToAdd setValue:[NSDate date] forKey:@"createdAt"];
                 itemsToAdd[i] = itemToAdd;
             }
             

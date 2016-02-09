@@ -48,7 +48,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:120
+    _timer = [NSTimer scheduledTimerWithTimeInterval:30
                                               target:self
                                             selector:@selector(hackTimeIsUp)
                                             userInfo:nil

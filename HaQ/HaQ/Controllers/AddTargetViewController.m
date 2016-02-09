@@ -27,6 +27,7 @@
     [super viewDidLoad];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     PFQuery *query = [PFUser query];
+    [query whereKey:@"username" notEqualTo:[PFUser currentUser].username];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {
@@ -74,21 +75,31 @@
     [suchFriendshipIsNotExistant whereKey:@"objectId" notEqualTo:currentUser.objectId];
     [suchFriendshipIsNotExistant getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        __block UIAlertController *alert;
+        UIAlertController *alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:@"Dummy Alert"];
+        //        UIAlertAction *alertOkButton = [UIAlertAction
+        //                                        actionWithTitle:@"OK"
+        //                                        style:UIAlertActionStyleDefault
+        //                                        handler:^(UIAlertAction * action)
+        //                                        {
+        //                                            [self performSegueWithIdentifier:@"addTargetBackToMain" sender:self];
+        //                                        }];
+        //        [alert addAction:alertOkButton];
         
         if (object) {
             Friendship *targetContact = (Friendship*)object;
             if (targetContact.isApproved == TargetContactDeclined) {
                 targetContact.isApproved = TargetContactPending;
                 [targetContact saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                    alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
-                    [self presentViewController:alert animated:YES completion:nil];
+                    alert.title = TargetContactSendMessageTitle;
+                    alert.message = TargetContactSendMessageDescription;
                 }];
                 
+                [self presentViewController:alert animated:YES completion:nil];
                 return;
             }
             
-            alert = [HelperMethods getAlert:TargetContactSuchContactAlreadyExistsMessageTitle andMessage:TargetContactSuchContactAlreadyExistsMessageDescription];
+            alert.title = TargetContactSuchContactAlreadyExistsMessageTitle;
+            alert.message = TargetContactSuchContactAlreadyExistsMessageDescription;
             [self presentViewController:alert animated:YES completion:nil];
             return;
         }
@@ -99,10 +110,11 @@
         [friendship saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             if (succeeded) {
-                alert = [HelperMethods getAlert:TargetContactSendMessageTitle andMessage:TargetContactSendMessageDescription];
+                alert.title = TargetContactSendMessageTitle;
+                alert.message = TargetContactSendMessageDescription;
             } else {
                 NSString *errorString = [HelperMethods getStringFromError:error];
-                alert = [HelperMethods getAlert:SomethingBadHappenedTitleMessage andMessage:errorString];
+                alert.message = errorString;
             }
             
             [self presentViewController:alert animated:YES completion:nil];

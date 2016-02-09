@@ -56,7 +56,8 @@
             
             GMSMarker *itemMarker = [[GMSMarker alloc] init];
             itemMarker.title = @"Money!";
-            itemMarker.icon = [UIImage imageNamed:@"icon_money"];
+            UIImage *test = [UIImage imageNamed:@"icon_money"];
+            itemMarker.icon = test;
             itemMarker.position = CLLocationCoordinate2DMake(latitude, longitude);
             itemMarker.appearAnimation = kGMSMarkerAnimationPop;
             itemMarker.map = _mapView;

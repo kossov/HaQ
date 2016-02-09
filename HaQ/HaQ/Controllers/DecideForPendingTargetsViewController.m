@@ -36,11 +36,13 @@
 - (IBAction)ApproveButtonAction:(id)sender {
     self.decideForPendingTarget.isApproved = TargetContactApproved;
     [self saveTargetInBackground];
+    [self performSegueWithIdentifier:@"AcceptedContactBackToMain" sender:self];
 }
 
 - (IBAction)DeclineButtonAction:(id)sender {
     self.decideForPendingTarget.isApproved = TargetContactDeclined;
     [self saveTargetInBackground];
+    [self performSegueWithIdentifier:@"AcceptedContactBackToMain" sender:self];
 }
 
 - (void)saveTargetInBackground {
